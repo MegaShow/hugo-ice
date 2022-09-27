@@ -1,0 +1,12 @@
+baseURL = 'http://example.org/'
+languageCode = 'zh-cn'
+title = 'Hugo-ICE Demo Site'
+theme = 'github.com/megashow/hugo-ice'
+
+[module]
+[[module.imports]]
+path = 'github.com/megashow/hugo-ice'
+
+[params]
+author = 'MegaShow'
+startYear = '2016'
