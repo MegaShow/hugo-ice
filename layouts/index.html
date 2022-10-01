@@ -1,8 +1,15 @@
 {{ define "main" }}
-<div>
-  {{ range first 10 .Site.RegularPages }}
-  <a href="{{ .Permalink }}">{{ .Title }}</a>
-  {{ .Render "summary"}}
+<main class="home-article-list">
+  {{ range where .Site.RegularPages "Type" "ne" "page" }}
+  <article class="article">
+    <h2 class="article-title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    <div class="article-summary">{{ .Summary }}</div>
+    <div class="article-info">
+      <time>{{ .Date.Format "2006-01-02" }}</time>
+    </div>
+  </article>
   {{ end }}
-</div>
+</main>
 {{ end }}

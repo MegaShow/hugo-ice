@@ -1,5 +1,18 @@
 <footer class="footer">
   <div class="footer-container">
-    <div>© {{ .Site.Params.StartYear }} - {{ .Site.LastChange.Format "2006" }} {{ .Site.Params.Author }}</div>
+    <div>
+      {{/* 如果起始年份与当前年份相同或起始年份未设置，则只展示当前年份 */}}
+      {{ if or (eq (string .Site.Params.StartYear) (.Site.LastChange.Format "2006")) (not .Site.Params.StartYear) }}
+      <span>© {{ .Site.LastChange.Format "2006" }}</span>
+      {{ else }}
+      <span>© {{ .Site.Params.StartYear }} - {{ .Site.LastChange.Format "2006" }}</span>
+      {{ end }}
+      <span>{{ .Site.Author.name }}</span>
+      {{/* 备案信息 */}}
+      {{ if .Site.Params.Beian }}
+      <span style="margin: 0 5px;">|</span>
+      <a href="https://beian.miit.gov.cn/">{{ .Site.Params.Beian }}</a>
+      {{ end }}
+    </div>
   </div>
 </footer>

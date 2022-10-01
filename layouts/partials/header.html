@@ -5,5 +5,14 @@
         <h1 class="header-title">{{ $.Site.Title }}</h1>
       </a>
     </nav>
+    <nav class="header-nav">
+      <ul>
+        {{ range $.Site.Menus.header }}
+        <li class="header-nav-item">
+          <a href="{{ .URL }}"> {{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
   </div>
 </header>

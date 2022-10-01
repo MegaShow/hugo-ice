@@ -1,0 +1,40 @@
+.header {
+  color: var(--header-color);
+  background: var(--header-background);
+}
+
+.header-container {
+  width: var(--header-container-width);
+  margin: 0 auto;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+
+  a {
+    color: var(--header-color);
+    text-decoration: none;
+  }
+}
+
+.header-title {
+  margin: 0;
+}
+
+.header-nav {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.header-nav-item {
+  display: inline-block;
+  list-style: none;
+
+  a {
+    padding: 8px 16px;
+    transition: 500ms;
+  }
+
+  :hover {
+    background: var(--header-link-background);
+  }
+}

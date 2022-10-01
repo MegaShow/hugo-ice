@@ -1,12 +1,29 @@
 baseURL = 'http://example.org/'
 languageCode = 'zh-cn'
-title = 'Hugo-ICE Demo Site'
+title = 'Hugo ICE Demo Site'
 theme = 'github.com/megashow/hugo-ice'
+
+[author]
+name = 'MegaShow'
 
 [module]
 [[module.imports]]
 path = 'github.com/megashow/hugo-ice'
 
 [params]
-author = 'MegaShow'
-startYear = '2016'
+startYear = 2022
+beian = ''
+
+[menu]
+# [[menu.header]]
+#   name = '归档'
+#   url = '/archives'
+#   weight = 1
+# [[menu.header]]
+#   name = '专题'
+#   url = '/series'
+#   weight = 2
+[[menu.header]]
+  name = '关于'
+  url = '/about'
+  weight = 100
