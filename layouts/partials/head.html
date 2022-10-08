@@ -3,7 +3,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Title }}</title>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
+
+  {{ if .Site.Params.Favicon }}
+  <link rel="shortcut icon" href="{{ relLangURL .Site.Params.Favicon }}" />
+  {{ end }}
+
   {{- $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
+  {{- $js := resources.Get "js/main.js" | js.Build | resources.Minify | resources.Fingerprint -}}
+  <script defer src="{{ $js.RelPermalink }}"></script>
 </head>

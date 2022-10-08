@@ -1,13 +1,19 @@
 <header class="header">
   <div class="header-container">
-    <nav>
-      <a href="{{ $.Site.BaseURL }}">
-        <h1 class="header-title">{{ $.Site.Title }}</h1>
+    <nav class="header-title">
+      <a class="header-title-link" href="{{ .Site.BaseURL }}">
+        {{ if .Site.Params.Favicon }}
+        <img src="{{ relLangURL .Site.Params.Favicon }}" alt="Logo">
+        {{ end }}
+        <h1>{{ .Site.Title }}</h1>
       </a>
+      <div class="header-nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
     </nav>
     <nav class="header-nav">
-      <ul>
-        {{ range $.Site.Menus.header }}
+      <ul class="header-nav-list">
+        {{ range .Site.Menus.header }}
         <li class="header-nav-item">
           <a href="{{ .URL }}"> {{ .Name }}</a>
         </li>

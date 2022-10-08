@@ -4,15 +4,16 @@ title = 'Hugo ICE Demo Site'
 theme = 'github.com/megashow/hugo-ice'
 
 [author]
-name = 'MegaShow'
+  name = 'MegaShow'
 
 [module]
 [[module.imports]]
-path = 'github.com/megashow/hugo-ice'
+  path = 'github.com/megashow/hugo-ice'
 
 [params]
-startYear = 2022
-beian = ''
+  favicon = 'favicon.svg'
+  startYear = 2022
+  beian = ''
 
 [menu]
 # [[menu.header]]

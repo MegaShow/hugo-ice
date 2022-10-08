@@ -1,14 +1,20 @@
+$header-max-width: 767px;
+
 .header {
-  color: var(--header-color);
   background: var(--header-background);
+  color: var(--header-color);
 }
 
 .header-container {
-  width: var(--header-container-width);
-  margin: 0 auto;
-  padding: 10px 0;
-  display: flex;
   align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+  padding: 10px;
+
+  @media screen and (max-width: $header-max-width) {
+    display: block;
+  }
 
   a {
     color: var(--header-color);
@@ -17,24 +23,72 @@
 }
 
 .header-title {
-  margin: 0;
+  align-items: center;
+  display: flex;
+}
+
+.header-title-link {
+  display: flex;
+
+  img {
+    margin-right: 10px;
+    width: 32px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin: 0;
+  }
 }
 
 .header-nav {
   flex-grow: 1;
+  margin: 8px 0;
   text-align: right;
+
+  @media screen and (max-width: $header-max-width) {
+    display: none;
+    text-align: center;
+
+    &.nav-open {
+      display: block;
+    }
+  }
+}
+
+.header-nav-list {
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .header-nav-item {
   display: inline-block;
   list-style: none;
 
-  a {
-    padding: 8px 16px;
-    transition: 500ms;
+  @media screen and (max-width: $header-max-width) {
+    display: block;
   }
 
   :hover {
     background: var(--header-link-background);
+  }
+
+  a {
+    display: block;
+    padding: 8px 16px;
+    transition: 500ms;
+  }
+}
+
+.header-nav-toggle {
+  display: none;
+  flex-grow: 1;
+  font-size: 20px;
+  margin: 13.5px 5px;
+  text-align: right;
+
+  @media screen and (max-width: $header-max-width) {
+    display: block;
   }
 }
