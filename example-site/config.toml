@@ -14,6 +14,7 @@ theme = 'github.com/megashow/hugo-ice'
   favicon = 'favicon.svg'
   startYear = 2022
   beian = ''
+  mainSections = ['posts']
 
 [menu]
 # [[menu.header]]

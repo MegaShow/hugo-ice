@@ -2,10 +2,14 @@
   <div class="footer-container">
     <div>
       {{/* 如果起始年份与当前年份相同或起始年份未设置，则只展示当前年份 */}}
-      {{ if or (eq (string .Site.Params.StartYear) (.Site.LastChange.Format "2006")) (not .Site.Params.StartYear) }}
+      {{ $lastChange := .Site.LastChange }}
+      {{ if eq (.Site.LastChange.Format "2006") "0001" }}
+        {{ $lastChange = now }}
+      {{ end }}
+      {{ if or (eq (string .Site.Params.StartYear) ($lastChange.Format "2006")) (not .Site.Params.StartYear) }}
       <span>© {{ .Site.LastChange.Format "2006" }}</span>
       {{ else }}
-      <span>© {{ .Site.Params.StartYear }} - {{ .Site.LastChange.Format "2006" }}</span>
+      <span>© {{ .Site.Params.StartYear }} - {{ $lastChange.Format "2006" }}</span>
       {{ end }}
       <span>{{ .Site.Author.name }}</span>
       {{/* 备案信息 */}}

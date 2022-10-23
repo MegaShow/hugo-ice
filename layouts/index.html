@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="home-article-list">
-  {{ range where .Site.RegularPages "Type" "ne" "page" }}
+  {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
   <article class="article">
     <h2 class="article-title">
       <a href="{{ .Permalink }}">{{ .Title }}</a>
