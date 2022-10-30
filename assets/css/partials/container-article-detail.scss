@@ -1,0 +1,67 @@
+// 文章详情容器
+.article-content-container {
+  
+}
+
+// 文章详情页
+.article-detail {
+  padding: 20px;
+
+  a {
+    color: var(--container-color);
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  a:hover {
+    border-bottom-color: var(--footer-color);
+  }
+
+  // 文章标题
+  .article-title {
+    font-size: 32px;
+    font-weight: normal;
+    margin: 15px 0 5px 0;
+  }
+
+  // 文章内容
+  .article-content {
+    // 标题
+    h1, h2, h3, h4, h5, h6 {
+      border-inline-start: 4px solid #007d9c;
+      margin-inline-start: -20px;
+      padding-inline-start: 16px;
+    }
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 24px; }
+    h4 { font-size: 20px; }
+    h5 { font-size: 18px; }
+    h6 { font-size: 16px; }
+
+    // 段落
+    p {
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    p code {
+      background: #eee;
+      font-size: 14px;
+      margin: 0 4px;
+      padding: 2px 4px;
+    }
+
+    // 图像
+    p img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+}
+
+// 文章详情目录
+.article-detail-toc {
+
+}
