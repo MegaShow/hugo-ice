@@ -6,11 +6,11 @@ const onClickHeaderNavToggle = () => {
   if (icon.classList.contains('fa-bars')) {
     // 切出
     icon.classList.replace('fa-bars', 'fa-xmark')
-    nav.classList.add('nav-open')
+    nav.classList.add('header-nav-open')
   } else {
     // 隐藏
     icon.classList.replace('fa-xmark', 'fa-bars')
-    nav.classList.remove('nav-open')
+    nav.classList.remove('header-nav-open')
   }
 }
 

@@ -1,13 +1,18 @@
 {{ define "main" }}
-<main class="article-detail-container">
-  <article class="article-detail">
-    <h1 class="article-title">{{ .Title }}</h1>
-    <div class="article-info">
-      <time>{{ .Date.Format "2006-01-02" }}</time>
-    </div>
-    <div class="article-content">
-      {{ .Content }}
-    </div>
-  </article>
+<main class="container container-single">
+  <section class="box main-section">
+    <article class="article">
+      <h1 class="article-title">{{ .Title }}</h1>
+      <div class="article-info">
+        <time>{{ .Date.Format "2006-01-02" }}</time>
+      </div>
+      <div class="article-content">
+        {{ .Content }}
+      </div>
+    </article>
+  </section>
+  <aside class="box sidebar">
+    {{ .TableOfContents }}
+  </aside>
 </main>
 {{ end }}

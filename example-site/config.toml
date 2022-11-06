@@ -10,22 +10,34 @@ theme = 'github.com/megashow/hugo-ice'
 [[module.imports]]
   path = 'github.com/megashow/hugo-ice'
 
+# 菜单
+[menu]
+[[menu.header]]
+  name = '首页'
+  url = '/'
+  weight = 1
+[[menu.header]]
+  name = '归档'
+  url = '/archives'
+  weight = 2
+# [[menu.header]]
+#   name = '专题'
+#   url = '/series'
+#   weight = 3
+[[menu.header]]
+  name = '关于'
+  url = '/about'
+  weight = 100
+
 [params]
   favicon = 'favicon.svg'
   startYear = 2022
   beian = ''
   mainSections = ['posts']
 
-[menu]
-# [[menu.header]]
-#   name = '归档'
-#   url = '/archives'
-#   weight = 1
-# [[menu.header]]
-#   name = '专题'
-#   url = '/series'
-#   weight = 2
-[[menu.header]]
-  name = '关于'
-  url = '/about'
-  weight = 100
+# 第三方依赖
+[params.libraries]
+# 第三方依赖 Font-Awesome，该依赖默认启用，如果禁用，主题部分功能将不能正常工作
+# [params.libraries.fontawesome]
+#   enable = true
+#   url = <your-font-awesome-resource-url>

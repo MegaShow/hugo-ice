@@ -1,7 +1,7 @@
 <header class="header">
   <div class="header-container">
-    <nav class="header-title">
-      <a class="header-title-link" href="{{ .Site.BaseURL }}">
+    <nav class="header-inner">
+      <a class="header-brand" href="{{ .Site.BaseURL }}">
         {{ if .Site.Params.Favicon }}
         <img src="{{ relLangURL .Site.Params.Favicon }}" alt="Logo">
         {{ end }}
@@ -12,7 +12,7 @@
       </div>
     </nav>
     <nav class="header-nav">
-      <ul class="header-nav-list">
+      <ul class="header-nav-menu">
         {{ range .Site.Menus.header }}
         <li class="header-nav-item">
           <a href="{{ .URL }}"> {{ .Name }}</a>

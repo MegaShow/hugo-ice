@@ -1,0 +1,26 @@
+// 文章详情容器
+.container-single {
+  align-items: flex-start;
+  display: flex;
+  max-width: calc(var(--container-max-width) + 320px);
+
+  @media screen and (max-width: 1107px) {
+    max-width: var(--container-max-width);
+  }
+
+  // 主模块
+  .main-section {
+    max-width: var(--container-max-width);
+  }
+
+  .sidebar {
+    margin-left: 20px;
+    position: sticky;
+    top: 20px;
+    width: 320px;
+
+    @media screen and (max-width: 1107px) {
+      display: none;
+    }
+  }
+}
