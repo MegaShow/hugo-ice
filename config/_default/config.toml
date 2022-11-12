@@ -1,3 +1,10 @@
+[markup]
+  _merge = 'deep'
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 6
+    ordered = false
+
 [params.libraries]
 [params.libraries.fontawesome]
   enable = true

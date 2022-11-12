@@ -1,5 +1,6 @@
 {{ define "main" }}
-<main class="container container-single">
+{{ $hasToc := ge (len .TableOfContents) 100 }}
+<main class="container container-single {{ if not $hasToc }}container-single-without-toc{{- end -}}">
   <section class="box main-section">
     <article class="article">
       <h1 class="article-title">{{ .Title }}</h1>
@@ -11,8 +12,10 @@
       </div>
     </article>
   </section>
+  {{ if $hasToc }}
   <aside class="box sidebar">
     {{ .TableOfContents }}
   </aside>
+  {{ end }}
 </main>
 {{ end }}

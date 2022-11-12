@@ -1,3 +1,23 @@
+@use "variables.scss" as v;
+
+$screen-sm-min: v.$screen-sm-min;
+$screen-sm-max: v.$screen-md-min - 1px;
+$screen-md-min: v.$screen-md-min;
+$screen-md-max: v.$screen-lg-min - 1px;
+$screen-lg-min: v.$screen-lg-min;
+
+@mixin screen-sm {
+  @media screen and (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media screen and (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
 body {
   margin: 0;
   background: var(--body-backgroud);

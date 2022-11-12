@@ -11,6 +11,7 @@ Hugo ICE (冰块) 是由 MegaShow 设计，由 Rytia、yuyuforest 指导的 Hugo
 ## 要求
 
 - Hugo extended 0.102.3 或更高版本
+- Embedded Dart Sass 1.56.1 或更高版本
 
 如果使用 hugo module 特性，你还需要
 

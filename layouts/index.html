@@ -1,15 +1,17 @@
 {{ define "main" }}
-<main class="home-article-list">
-  {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-  <article class="article">
-    <h2 class="article-title">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2>
-    <div class="article-summary">{{ .Summary }}</div>
-    <div class="article-info">
-      <time>{{ .Date.Format "2006-01-02" }}</time>
-    </div>
-  </article>
-  {{ end }}
+<main class="container container-index">
+  <section class="box main-section">
+    {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+    <article class="article">
+      <h2 class="article-title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </h2>
+      <div class="article-content">{{ .Summary }}</div>
+      <div class="article-info">
+        <time>{{ .Date.Format "2006-01-02" }}</time>
+      </div>
+    </article>
+    {{ end }}
+  </section>
 </main>
 {{ end }}

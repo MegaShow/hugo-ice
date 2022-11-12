@@ -1,10 +1,6 @@
-// 主题样式
-@import 'variables.scss';
-
 // 组件样式
-@import 'base.scss';
-@import 'partials/container.scss';
-@import 'partials/container-article-list.scss';
-@import 'partials/container-single.scss';
-@import 'partials/footer.scss';
-@import 'partials/header.scss';
+@use "partials/container";
+@use "partials/container-index";
+@use "partials/container-single";
+@use "partials/footer";
+@use "partials/header";

@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="{{ $fontawesome.URL }}">
   {{ end }}
 
-  {{- $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+  {{- $opts := dict "transpiler" "dartsass" -}}
+  {{- $style := resources.Get "css/main.scss" | resources.ToCSS $opts | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
   {{- $js := resources.Get "js/main.js" | js.Build | resources.Minify | resources.Fingerprint -}}

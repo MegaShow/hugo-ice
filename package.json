@@ -1,9 +1,23 @@
 {
+  "name": "hugo-ice",
+  "description": "A hugo theme designed by MegaShow.",
+  "main": "assets/js/main.js",
+  "author": "MegaShow",
+  "license": "MIT",
+  "scripts": {
+    "eslint": "eslint assets/js/ --fix --cache --quiet --ext .js",
+    "stylelint": "stylelint assets/css/**/*.scss --fix --cache --quiet"
+  },
   "devDependencies": {
-    "eslint": "^8.25.0",
+    "eslint": "^8.27.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.3.0",
-    "eslint-plugin-promise": "^6.0.1"
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "stylelint": "^14.14.1",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0"
   }
 }

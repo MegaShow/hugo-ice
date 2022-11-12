@@ -1,26 +1,141 @@
+@use "base" as *;
+
 // 文章详情容器
 .container-single {
   align-items: flex-start;
   display: flex;
-  max-width: calc(var(--container-max-width) + 320px);
+  max-width: $screen-md-max;
 
-  @media screen and (max-width: 1107px) {
-    max-width: var(--container-max-width);
+  @include screen-md {
+    max-width: $screen-sm-max;
   }
 
-  // 主模块
-  .main-section {
-    max-width: var(--container-max-width);
+  @include screen-sm {
+    max-width: $screen-sm-max;
   }
 
   .sidebar {
     margin-left: 20px;
+    padding-left: 16px;
     position: sticky;
     top: 20px;
-    width: 320px;
+    width: 280px;
 
-    @media screen and (max-width: 1107px) {
+    @include screen-md {
       display: none;
     }
+
+    @include screen-sm {
+      display: none;
+    }
+
+    ul {
+      font-size: 14px;
+      list-style-type: square;
+      padding-left: 16px;
+
+      a {
+        color: var(--container-color);
+        text-decoration: none;
+
+        &:hover {
+          color: #337ab7;
+        }
+      }
+
+      ul {
+        list-style-type: none;
+      }
+    }
   }
+
+  // 主模块
+  .main-section {
+    max-width: $screen-sm-max;
+    width: 100%;
+
+    .article {
+      padding: 20px;
+
+      // 文章标题
+      .article-title {
+        font-size: 32px;
+        font-weight: normal;
+        margin: 15px 0 5px;
+      }
+
+      // 文章内容
+      .article-content {
+        // 标题
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          border-inline-start: 4px solid #007d9c;
+          margin-inline-start: -20px;
+          padding-inline-start: 16px;
+        }
+
+        a {
+          color: var(--container-color);
+          text-decoration: none;
+          border-bottom: 1px solid #ccc;
+        }
+
+        a:hover {
+          border-bottom-color: black;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        h2 {
+          font-size: 28px;
+        }
+
+        h3 {
+          font-size: 24px;
+        }
+
+        h4 {
+          font-size: 20px;
+        }
+
+        h5 {
+          font-size: 18px;
+        }
+
+        h6 {
+          font-size: 16px;
+        }
+
+        // 段落
+        p {
+          line-height: 2;
+          margin-bottom: 20px;
+        }
+
+        p code {
+          background: #eee;
+          font-size: 14px;
+          margin: 0 4px;
+          padding: 2px 4px;
+        }
+
+        // 图像
+        p img {
+          display: block;
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.container-single-without-toc {
+  max-width: $screen-sm-max;
 }

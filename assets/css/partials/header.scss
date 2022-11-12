@@ -1,18 +1,24 @@
-$header-max-width: 767px;
+@use "base" as *;
 
+// 顶部栏
 .header {
   background: var(--header-background);
   color: var(--header-color);
 }
 
+// 顶部栏容器
 .header-container {
   align-items: center;
   display: flex;
   margin: 0 auto;
-  max-width: var(--container-max-width);
+  max-width: $screen-lg-min;
   padding: 12px;
 
-  @media screen and (max-width: $header-max-width) {
+  @include screen-md {
+    max-width: $screen-md-min;
+  }
+
+  @include screen-sm {
     display: block;
   }
 
@@ -22,12 +28,14 @@ $header-max-width: 767px;
   }
 }
 
+// 顶部栏内部包装
 .header-inner {
   align-items: center;
   display: flex;
   margin-right: 10px;
 }
 
+// logo相关
 .header-brand {
   display: flex;
 
@@ -42,41 +50,41 @@ $header-max-width: 767px;
   }
 }
 
+// 导航
 .header-nav {
   flex-grow: 1;
   text-align: right;
 
-  @media screen and (min-width: 768) {
-    height: auto !important;
-  }
-
-  @media screen and (max-width: $header-max-width) {
+  @include screen-sm {
     display: none;
     text-align: center;
 
     &.header-nav-open {
+      display: block;
       border-top: 1px solid var(--header-color);
       margin-top: 8px;
     }
   }
 }
 
+// 导航菜单
 .header-nav-menu {
   display: block;
   margin: 8px 0;
   padding: 0;
 
-  @media screen and (max-width: $header-max-width) {
+  @include screen-sm {
     margin-top: 8px;
   }
 }
 
+// 导航菜单选项
 .header-nav-item {
   display: inline-block;
   list-style: none;
   margin: 0 4px;
 
-  @media screen and (max-width: $header-max-width) {
+  @include screen-sm {
     display: block;
   }
 
@@ -91,6 +99,7 @@ $header-max-width: 767px;
   }
 }
 
+// 导航菜单切入切出按钮
 .header-nav-toggle {
   display: none;
   flex-grow: 1;
@@ -98,7 +107,7 @@ $header-max-width: 767px;
   margin: 13.5px 5px;
   text-align: right;
 
-  @media screen and (max-width: $header-max-width) {
+  @include screen-sm {
     display: block;
   }
 }

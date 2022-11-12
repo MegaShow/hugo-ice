@@ -1,11 +1,17 @@
+$screen-sm-min: 0; // 小屏幕最小宽度，只展示正文
+$screen-md-min: 768px; // 中等屏幕最小宽度，只展示正文
+$screen-lg-min: 1088px; // 大屏幕最小宽度，同时展示正文和侧边栏
+
 :root {
+  // Body样式配置
   --body-backgroud: #f0f0f0;
 
+  // 正文容器配置
   --container-background: white;
   --container-color: black;
-  --container-max-width: 767px;
 
+  // 顶部栏样式配置
   --header-background: #37877f;
   --header-color: #f5f5f5;
-  --header-link-background: rgba(255, 255, 255, 0.25);
+  --header-link-background: rgb(255 255 255 / 25%);
 }
