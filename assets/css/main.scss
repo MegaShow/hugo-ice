@@ -4,3 +4,6 @@
 @use "partials/container-single";
 @use "partials/footer";
 @use "partials/header";
+
+// 短代码样式
+@use "shortcodes/tab.scss";

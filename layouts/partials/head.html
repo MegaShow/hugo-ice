@@ -1,26 +1,26 @@
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   {{ if .IsHome }}
-  <title>{{ .Site.Title }}</title>
+    <title>{{ .Site.Title }}</title>
   {{ else }}
-  <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
   {{ end }}
 
   {{ if .Site.Params.Favicon }}
-  <link rel="shortcut icon" href="{{ relLangURL .Site.Params.Favicon }}" />
+    <link rel="shortcut icon" href="{{ relLangURL .Site.Params.Favicon }}" />
   {{ end }}
 
   {{- $fontawesome := .Site.Params.Libraries.FontAwesome -}}
   {{ if $fontawesome.Enable }}
-  <link rel="stylesheet" href="{{ $fontawesome.URL }}">
+    <link rel="stylesheet" href="{{ $fontawesome.URL }}" />
   {{ end }}
 
   {{- $opts := dict "transpiler" "dartsass" -}}
   {{- $style := resources.Get "css/main.scss" | resources.ToCSS $opts | resources.Minify | resources.Fingerprint -}}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
-  {{- $js := resources.Get "js/main.js" | js.Build | resources.Minify | resources.Fingerprint -}}
+  {{- $js := resources.Get "js/main.ts" | js.Build | resources.Minify | resources.Fingerprint -}}
   <script defer src="{{ $js.RelPermalink }}"></script>
 </head>

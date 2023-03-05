@@ -1,0 +1,23 @@
+{{/* 标记 TabGroup 需要闭合标签 */}}
+{{ .Inner }}
+
+
+<div class="ice-tab-group">
+  {{/* Tab 头部 */}}
+  <ul class="ice-tab-header">
+    {{ range $idx, $tab := $.Scratch.Get "tabs" }}
+      <li data-index="{{ $idx }}" {{ if eq $idx "0" }}data-active="true"{{ end }}>
+        {{ index . "header" }}
+      </li>
+    {{ end }}
+  </ul>
+
+  {{/* Tab 内容 */}}
+  <div class="ice-tab-content">
+    {{ range $idx, $tab := $.Scratch.Get "tabs" }}
+      <div data-index="{{ $idx }}" {{ if eq $idx "0" }}data-active="true"{{ end }}>
+        {{ index . "content" }}
+      </div>
+    {{ end }}
+  </div>
+</div>

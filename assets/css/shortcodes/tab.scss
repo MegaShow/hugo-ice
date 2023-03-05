@@ -1,0 +1,26 @@
+// Tab标题
+.ice-tab-header {
+  border-bottom: solid 3px #eee;
+  display: flex;
+
+  li {
+    cursor: pointer;
+    list-style: none;
+    padding: 5px 10px;
+  }
+
+  li[data-active='true'] {
+    background-color: #eee;
+  }
+}
+
+// Tab内容
+.ice-tab-content {
+  > div {
+    display: none;
+  }
+
+  > div[data-active='true'] {
+    display: block;
+  }
+}

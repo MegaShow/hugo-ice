@@ -1,0 +1,21 @@
+{{/* 判断 Tab 是否在 TabGroup 里面 */}}
+{{ if or (not .Parent) (ne .Parent.Name "TabGroup") }}
+  {{ errorf "shortcode 'Tab' must be used in a 'TabGroup' block" }}
+{{ end }}
+
+{{/* 获取参数信息 */}}
+{{ $header := "" }}
+{{ if and (not .IsNamedParams) (.Get 0) }}
+  {{ $header = .Get 0 }}
+{{ else }}
+  {{ $header = default (printf "Tab %d" (add .Ordinal 1)) (.Get "header") }}
+{{ end }}
+
+{{/* 将参数写入父节点数据中 */}}
+{{ $data := dict "header" $header }}
+{{ with $.Inner }}
+  {{ $data = merge $data (dict "content" $.Inner) }}
+{{ end }}
+{{ with $.Parent }}
+  {{ $.Parent.Scratch.SetInMap "tabs" (printf "%d" $.Ordinal) $data }}
+{{ end }}

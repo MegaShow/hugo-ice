@@ -8,6 +8,7 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "jinliming2.vscode-go-template",
+    "kaellarkin.hugo-shortcode-syntax",
     "stylelint.vscode-stylelint"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
