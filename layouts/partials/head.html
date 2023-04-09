@@ -1,26 +1,32 @@
+{{/* html head 信息 */}}
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  {{/* 标题 */}}
   {{ if .IsHome }}
     <title>{{ .Site.Title }}</title>
   {{ else }}
     <title>{{ .Title }} | {{ .Site.Title }}</title>
   {{ end }}
 
+  {{/* logo 图标 */}}
   {{ if .Site.Params.Favicon }}
     <link rel="shortcut icon" href="{{ relLangURL .Site.Params.Favicon }}" />
-  {{ end }}
+  {{ end -}}
 
-  {{- $fontawesome := .Site.Params.Libraries.FontAwesome -}}
+  {{/* 导入 FontAwesome */}}
+  {{ $fontawesome := .Site.Params.Libraries.FontAwesome }}
   {{ if $fontawesome.Enable }}
     <link rel="stylesheet" href="{{ $fontawesome.URL }}" />
-  {{ end }}
+  {{ end -}}
 
-  {{- $opts := dict "transpiler" "dartsass" -}}
-  {{- $style := resources.Get "css/main.scss" | resources.ToCSS $opts | resources.Minify | resources.Fingerprint -}}
+  {{/* 导入主题 CSS */}}
+  {{ $opts := dict "transpiler" "dartsass" }}
+  {{ $style := resources.Get "css/main.scss" | resources.ToCSS $opts | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
-  {{- $js := resources.Get "js/main.ts" | js.Build | resources.Minify | resources.Fingerprint -}}
+  {{/* 导入主题 JavaScript */}}
+  {{ $js := resources.Get "js/main.ts" | js.Build | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ $js.RelPermalink }}"></script>
 </head>

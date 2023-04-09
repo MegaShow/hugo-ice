@@ -1,14 +1,10 @@
 baseURL = 'http://example.org/'
 languageCode = 'zh-cn'
 title = 'Hugo ICE Demo Site'
-theme = 'github.com/megashow/hugo-ice'
+theme = 'hugo-ice'
 
 [author]
   name = 'MegaShow'
-
-[module]
-[[module.imports]]
-  path = 'github.com/megashow/hugo-ice'
 
 [markup]
   [markup.tableOfContents]

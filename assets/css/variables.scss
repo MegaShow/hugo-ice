@@ -3,6 +3,11 @@ $screen-md-min: 768px; // 中等屏幕最小宽度，只展示正文
 $screen-lg-min: 1088px; // 大屏幕最小宽度，同时展示正文和侧边栏
 
 :root {
+  // 顶部栏样式配置
+  --header-background: #37877f;
+  --header-color: #f5f5f5;
+  --header-link-background: rgb(255 255 255 / 25%);
+
   // Body样式配置
   --body-backgroud: #f0f0f0;
 
@@ -10,8 +15,6 @@ $screen-lg-min: 1088px; // 大屏幕最小宽度，同时展示正文和侧边�
   --container-background: white;
   --container-color: black;
 
-  // 顶部栏样式配置
-  --header-background: #37877f;
-  --header-color: #f5f5f5;
-  --header-link-background: rgb(255 255 255 / 25%);
+  // 字体
+  --font-family-code: 'Menlo', 'Monaco', 'Consolas', 'Courier New', 'Monospace';
 }

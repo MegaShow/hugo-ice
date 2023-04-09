@@ -1,21 +1,19 @@
 {{ define "main" }}
-{{ $hasToc := ge (len .TableOfContents) 100 }}
-<main class="container container-single {{ if not $hasToc }}container-single-without-toc{{- end -}}">
-  <section class="box main-section">
-    <article class="article">
+  {{ $hasToc := ge (len .TableOfContents) 100 }}
+  <main
+    class="container container-single {{ if not $hasToc }}container-single-without-toc{{- end -}}"
+  >
+    <section class="box main-section">
       <h1 class="article-title">{{ .Title }}</h1>
       <div class="article-info">
         <time>{{ .Date.Format "2006-01-02" }}</time>
       </div>
-      <div class="article-content">
-        {{ .Content }}
-      </div>
-    </article>
-  </section>
-  {{ if $hasToc }}
-  <aside class="box sidebar">
-    {{ .TableOfContents }}
-  </aside>
-  {{ end }}
-</main>
+      <article class="article">{{ .Content }}</article>
+    </section>
+    {{ if $hasToc }}
+      <aside class="box sidebar">
+        {{ .TableOfContents }}
+      </aside>
+    {{ end }}
+  </main>
 {{ end }}
