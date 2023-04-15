@@ -23,6 +23,8 @@ export const addEventListener = () => {
       });
     };
 
-    tabs.forEach(tab => tab.addEventListener('click', onClick));
+    tabs.forEach(tab => {
+      tab.addEventListener('click', onClick);
+    });
   });
 };

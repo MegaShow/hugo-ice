@@ -1,7 +1,7 @@
 # Hugo ICE
 
+[![GitHub Action Status](https://github.com/megashow/hugo-ice/workflows/main.yml/badge.svg)](https://github.com/megashow/hugo-ice/actions)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/de4fa6da-8847-49ea-9524-c3bf39f6c3e1/deploy-status)](https://app.netlify.com/sites/hugo-ice-demo/deploys)
-
 
 > 目前正处于开发中，尚未发布任何版本。
 
