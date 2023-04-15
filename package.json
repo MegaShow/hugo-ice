@@ -5,10 +5,11 @@
   "author": "MegaShow",
   "license": "MIT",
   "scripts": {
-    "build": "hugo --minify --source exampleSite --themesDir ../..",
-    "dev": "hugo serve --source exampleSite --themesDir ../..",
+    "dev": "hugo serve --minify --source exampleSite --themesDir ../..",
     "eslint": "eslint assets/js/ --fix --cache --quiet --ext .ts",
-    "stylelint": "stylelint assets/css/**/*.scss --fix --cache --quiet"
+    "stylelint": "stylelint assets/css/**/*.scss --fix --cache --quiet",
+    "build": "hugo --minify --source exampleSite --themesDir ../..",
+    "build:netlify": "snap install dart-sass-embedded && npm run build"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.54.0",

@@ -1,32 +1,13 @@
-@use "base" as *;
+@use 'base' as *;
 
 .container-index {
   max-width: $screen-sm-max;
 
   .main-section {
-    padding: 20px;
+    padding: 0 20px 20px;
 
     .article {
-      padding: 30px 10px;
-    }
-
-    .article-title {
-      margin: 0;
-      font-weight: normal;
-    }
-
-    .article-info {
-      margin: 5px 0;
-      font-size: 14px;
-      color: #999;
-    }
-
-    .article-content {
-      margin: 5px 0;
-
-      p {
-        margin: 0;
-      }
+      padding-top: 20px;
     }
   }
 

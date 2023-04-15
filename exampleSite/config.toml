@@ -7,6 +7,10 @@ theme = 'hugo-ice'
   name = 'MegaShow'
 
 [markup]
+  [markup.highlight]
+    lineNos = true
+    style = 'manni'
+    tabWidth = 4
   [markup.tableOfContents]
     startLevel = 1
     endLevel = 6

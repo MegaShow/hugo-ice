@@ -1,3 +1,24 @@
+// 单页面文章标题
+.container-single .article-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 15px 0 5px;
+}
+
+// 列表页面文章标题
+.container-index .article-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 15px 0 5px;
+}
+
+// 文章元信息
+.article-meta {
+  font-size: 1rem;
+  color: #747474;
+}
+
+// 正文内容
 .article {
   font-size: 1.125rem;
 
@@ -8,9 +29,16 @@
   h4,
   h5,
   h6 {
-    border-inline-start: 4px solid #009c8f;
-    margin-inline-start: -20px;
-    padding-inline-start: 16px;
+    color: #555;
+
+    .header-anchor {
+      opacity: 0;
+      margin-left: 8px;
+    }
+
+    &:hover .header-anchor {
+      opacity: 1;
+    }
   }
 
   h1 {
@@ -40,6 +68,11 @@
   // 段落
   p {
     line-height: 2;
+  }
+
+  // 粗体
+  strong {
+    color: #555;
   }
 
   // 块引用
@@ -73,14 +106,50 @@
   }
 
   // 代码块
-  code {
-    font-family: var(--font-family-code);
-  }
+  .highlight {
+    margin-bottom: 1.5rem;
+    position: relative;
 
-  pre {
-    font-family: var(--font-family-code);
-    font-size: 14px;
-    line-height: 1.6;
+    code {
+      font-family: var(--font-family-code);
+    }
+
+    pre {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+      padding: 8px 0 8px 8px;
+    }
+
+    tr > :first-child pre {
+      background-color: #c5e5f0 !important;
+    }
+
+    tr > :last-child pre {
+      padding-left: 12px;
+    }
+
+    .copy-button {
+      border: none;
+      border-radius: 6px;
+      color: #727272;
+      opacity: 0;
+      padding: 4px;
+      position: absolute;
+      right: 8px;
+      top: 6px;
+      transition: 0.5s;
+
+      &:hover {
+        background-color: #dedede;
+        color: #292d32;
+        cursor: pointer;
+      }
+    }
+
+    &:hover .copy-button {
+      opacity: 1;
+    }
   }
 
   // 表格
@@ -98,9 +167,15 @@
     text-align: left;
   }
 
+  th {
+    color: #555;
+  }
+
   // 引用
+  /* stylelint-disable-next-line no-descending-specificity */
   p code {
-    background: #eee;
+    background: #e0e5e5;
+    font-family: var(--font-family-code);
     font-size: 14px;
     margin: 0 4px;
     padding: 2px 4px;
@@ -108,13 +183,13 @@
 
   // 链接
   a {
-    color: var(--container-color);
+    color: #007bff;
     text-decoration: none;
-    border-bottom: 1px solid #ccc;
-  }
 
-  a:hover {
-    border-bottom-color: black;
+    &:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
   }
 
   // 图像
