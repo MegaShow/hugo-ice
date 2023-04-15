@@ -1,17 +1,20 @@
 {{ define "main" }}
-<main class="container container-index">
-  <section class="box main-section">
-    {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    <article class="article">
-      <h2 class="article-title">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </h2>
-      <div class="article-content">{{ .Summary }}</div>
-      <div class="article-info">
-        <time>{{ .Date.Format "2006-01-02" }}</time>
-      </div>
-    </article>
-    {{ end }}
-  </section>
-</main>
+  <main class="container container-index">
+    <section class="box main-section">
+      {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+        <article class="article">
+          <div class="article-header">
+            <h2 class="article-title">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+            <div class="article-meta">
+              <label>发布于</label>
+              <time>{{ .Date.Format "2006-01-02" }}</time>
+            </div>
+          </div>
+          <div>{{ .Summary }}</div>
+        </article>
+      {{ end }}
+    </section>
+  </main>
 {{ end }}

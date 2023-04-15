@@ -1,4 +1,4 @@
-@use "variables.scss" as v;
+@use 'variables.scss' as v;
 
 $screen-sm-min: v.$screen-sm-min;
 $screen-sm-max: v.$screen-md-min - 1px;
@@ -16,6 +16,10 @@ $screen-lg-min: v.$screen-lg-min;
   @media screen and (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max}) {
     @content;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

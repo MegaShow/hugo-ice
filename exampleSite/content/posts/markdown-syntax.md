@@ -109,6 +109,16 @@ func main() {
 }
 ```
 
+```ruby
+puts 'Hello, hugo ice!'
+```
+
+{{< highlight rust "linenos=false" >}}
+fn main() {
+    println!("Hello, hugo ice!");
+}
+{{< /highlight >}}
+
 # 表格
 
 | 名字 | 班级 | 成绩  |

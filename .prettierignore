@@ -1,0 +1,13 @@
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+/hugo_stats.json
+
+# Node
+node_modules/
+.eslintcache
+.stylelintcache
+
+# Article
+*.md

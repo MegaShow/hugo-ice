@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "hugo --minify --source exampleSite --themesDir ../..",
-    "dev": "hugo serve --source exampleSite --themesDir ../..",
+    "dev": "hugo serve --minify --source exampleSite --themesDir ../..",
     "eslint": "eslint assets/js/ --fix --cache --quiet --ext .ts",
     "stylelint": "stylelint assets/css/**/*.scss --fix --cache --quiet"
   },
