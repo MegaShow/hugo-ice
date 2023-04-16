@@ -3,6 +3,12 @@
 BIN_DIR=/opt/build/repo/node_modules/.bin
 DARTSASS_VERSION=1.62.0
 
+BASE_URL=${URL}
+if [ ${CONTEXT} != 'production' ]
+then
+    BASE_URL=${DEPLOY_PRIME_URL}
+fi
+
 # 安装 Dart Sass
 echo "Install Dart Sass Embedded..."
 mkdir -p $BIN_DIR
@@ -14,4 +20,4 @@ dart-sass-embedded --version
 
 # 构建示例站点
 echo "Building Example Site..."
-hugo --minify --source exampleSite --themesDir ../.. --theme repo --baseURL ${DEPLOY_PRIME_URL}
+hugo --minify --source exampleSite --themesDir ../.. --theme repo --baseURL ${BASE_URL}

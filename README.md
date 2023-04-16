@@ -1,63 +1,25 @@
-# Hugo ICE
+# Hugo Ice
 
-[![GitHub Action Status](https://github.com/megashow/hugo-ice/workflows/main.yml/badge.svg)](https://github.com/megashow/hugo-ice/actions)
+> **该主题目前处于 Beta 状态，已存在特性和功能可能会被修改或移除。**
+
+[![GitHub Action Build](https://github.com/MegaShow/hugo-ice/actions/workflows/main.yaml/badge.svg)](https://github.com/MegaShow/hugo-ice/actions/workflows/main.yaml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/de4fa6da-8847-49ea-9524-c3bf39f6c3e1/deploy-status)](https://app.netlify.com/sites/hugo-ice-demo/deploys)
 
-> 目前正处于开发中，尚未发布任何版本。
+Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题。
 
-Hugo ICE (冰块) 是由 MegaShow 设计，由 Rytia、yuyuforest 指导的 Hugo 主题，主打简洁、清爽。
+## 使用指引
 
-## 特性
+待补充~
 
-- 简洁、清爽
+## 示例站点
 
-## 要求
+- hugo ice demo: https://hugo-ice-demo.netlify.app
+- icytown: https://icytown.com
 
-- Hugo extended 0.102.3 或更高版本
-- Embedded Dart Sass 1.56.1 或更高版本
+## 特别鸣谢
 
-如果使用 hugo module 特性，你还需要
+感谢 [Rytia](https://github.com/zzfly256)、[yuyuforest](https://github.com/yuyuforest) 在主题设计过程中的指导。
 
-- Git
-- Go 1.13 或更高版本
+## 协议
 
-## 使用主题
-
-你可以使用 hugo module 的特性引入冰块主题。
-
-将你的仓库初始化为一个 hugo module。
-
-```sh
-$ hugo mod init github.com/repo/path
-```
-
-在 `config.toml` (或者其他配置文件) 中添加主题模块信息。
-
-```toml
-[module]
-[[module.imports]]
-path = 'github.com/megashow/hugo-ice'
-```
-
-然后拉取依赖和运行。
-
-```sh
-$ hugo mod tidy
-$ hugo server --minify
-```
-
-## TODO
-
-- [x] header、footer
-- [x] 首页
-- [ ] 分页
-- [ ] 文章页面
-- [ ] 目录、专题/专栏
-- [ ] 标签
-- [ ] 时间轴
-- [ ] 评论
-- [ ] 分享
-- [x] 响应式
-- [ ] i18n
-- [ ] 黑夜模式
-- [ ] 订阅
+Hugo Ice 基于 MIT 协议开源。

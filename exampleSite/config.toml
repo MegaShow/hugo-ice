@@ -3,6 +3,8 @@ languageCode = 'zh-cn'
 title = 'Hugo ICE Demo Site'
 theme = 'hugo-ice'
 
+hasCJKLanguage = true
+
 [author]
   name = 'MegaShow'
 
