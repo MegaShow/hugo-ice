@@ -1,12 +1,47 @@
-@use "base";
+@use 'base' as *;
+@use 'variables' as v;
 
+// 主容器
 .container {
+  align-items: flex-start;
+  display: flex;
   margin: 20px auto;
-  padding: 0 10px;
+  max-width: v.$screen-md-max;
+
+  @include screen-md {
+    max-width: v.$screen-md-max;
+  }
+
+  @include screen-sm {
+    max-width: v.$screen-sm-max;
+  }
+
+  // 主模块
+  .main-section {
+    margin: 0 auto;
+    max-width: v.$screen-sm-max;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  // 侧栏
+  .sidebar {
+    padding-left: 20px;
+    position: sticky;
+    top: 20px;
+    width: 260px;
+
+    @include screen-md {
+      display: none;
+    }
+
+    @include screen-sm {
+      display: none;
+    }
+  }
 }
 
-.box {
-  background-color: var(--container-background);
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgb(26 26 26 / 10%);
+// 文章模块
+.article-wrapper {
+  margin: 60px 0;
 }

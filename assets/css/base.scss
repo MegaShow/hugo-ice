@@ -1,19 +1,13 @@
-@use 'variables.scss' as v;
-
-$screen-sm-min: v.$screen-sm-min;
-$screen-sm-max: v.$screen-md-min - 1px;
-$screen-md-min: v.$screen-md-min;
-$screen-md-max: v.$screen-lg-min - 1px;
-$screen-lg-min: v.$screen-lg-min;
+@use 'variables' as v;
 
 @mixin screen-sm {
-  @media screen and (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max}) {
+  @media screen and (min-width: #{v.$screen-sm-min}) and (max-width: #{v.$screen-sm-max}) {
     @content;
   }
 }
 
 @mixin screen-md {
-  @media screen and (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max}) {
+  @media screen and (min-width: #{v.$screen-md-min}) and (max-width: #{v.$screen-md-max}) {
     @content;
   }
 }
@@ -24,5 +18,4 @@ html {
 
 body {
   margin: 0;
-  background: var(--body-backgroud);
 }

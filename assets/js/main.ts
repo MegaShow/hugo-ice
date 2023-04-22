@@ -1,7 +1,7 @@
 import { onLoad } from './event';
 import { initCodeBlock } from './partials/article';
 import * as header from './partials/header';
-import * as shortcodes from './shortcodes';
+import { initTab } from './shortcodes/tab';
 
 /** 初始化流程 */
 function init() {
@@ -10,7 +10,8 @@ function init() {
   // 文章内容
   onLoad(initCodeBlock);
 
-  onLoad(shortcodes.onLoad);
+  // 短代码
+  onLoad(initTab);
 }
 
 init();

@@ -1,7 +1,17 @@
+// Tab 组
+.ice-tab-group {
+  background-color: #f8f8f8;
+  border: 1px solid #c8c8c8;
+  border-radius: 0.25rem;
+  margin: 1rem 0;
+}
+
 // Tab标题
 .ice-tab-header {
-  border-bottom: solid 3px #eee;
+  border-bottom: solid 1px #ccc;
   display: flex;
+  margin: 0;
+  padding-left: 0 !important;
 
   li {
     cursor: pointer;
@@ -10,7 +20,7 @@
   }
 
   li[data-active='true'] {
-    background-color: #eee;
+    background-color: #bfdce3;
   }
 }
 
@@ -18,6 +28,7 @@
 .ice-tab-content {
   > div {
     display: none;
+    margin: 0 1rem;
   }
 
   > div[data-active='true'] {

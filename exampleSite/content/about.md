@@ -1,6 +1,6 @@
 ---
-title: 关于 Hugo ICE
+title: 关于 Hugo Ice
 date: 2022-09-29
 ---
 
-Hugo ICE (冰块) 是由 MegaShow 设计，由 Rytia、yuyuforest 指导的 Hugo 主题，主打简洁、清爽。
+Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题，特别鸣谢 Rytia、yuyuforest 在主题设计过程中的指导。

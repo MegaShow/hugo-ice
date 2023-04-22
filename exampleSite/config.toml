@@ -1,6 +1,6 @@
 baseURL = 'http://example.org/'
 languageCode = 'zh-cn'
-title = 'Hugo ICE Demo Site'
+title = 'Hugo Ice Demo Site'
 theme = 'hugo-ice'
 
 hasCJKLanguage = true
@@ -24,14 +24,6 @@ hasCJKLanguage = true
   name = '首页'
   url = '/'
   weight = 1
-[[menu.header]]
-  name = '归档'
-  url = '/archives'
-  weight = 2
-# [[menu.header]]
-#   name = '专题'
-#   url = '/series'
-#   weight = 3
 [[menu.header]]
   name = '关于'
   url = '/about'

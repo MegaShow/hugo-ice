@@ -1,4 +1,5 @@
-@use "base" as *;
+@use 'base' as *;
+@use 'variables' as v;
 
 // 顶部栏
 .header {
@@ -11,11 +12,11 @@
   align-items: center;
   display: flex;
   margin: 0 auto;
-  max-width: $screen-lg-min;
+  max-width: v.$screen-lg-min;
   padding: 12px;
 
   @include screen-md {
-    max-width: $screen-md-min;
+    max-width: v.$screen-md-min;
   }
 
   @include screen-sm {

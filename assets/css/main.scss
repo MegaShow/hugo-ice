@@ -1,10 +1,8 @@
 // 组件样式
-@use 'partials/article.scss';
+@use 'partials/article';
 @use 'partials/container';
-@use 'partials/container-index';
-@use 'partials/container-single';
 @use 'partials/footer';
 @use 'partials/header';
 
 // 短代码样式
-@use 'shortcodes/tab.scss';
+@use 'shortcodes/tab';

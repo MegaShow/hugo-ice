@@ -4,6 +4,7 @@
 
 [![GitHub Action Build](https://github.com/MegaShow/hugo-ice/actions/workflows/main.yaml/badge.svg)](https://github.com/MegaShow/hugo-ice/actions/workflows/main.yaml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/de4fa6da-8847-49ea-9524-c3bf39f6c3e1/deploy-status)](https://app.netlify.com/sites/hugo-ice-demo/deploys)
+![GitHub Release](https://img.shields.io/github/v/release/megashow/hugo-ice)
 
 Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题。
 
