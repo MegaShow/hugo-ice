@@ -3,6 +3,9 @@
     <section class="main-section">
       {{/* 文章头部内容 */}}
       <div class="article-header">
+        {{ if .Params.cover }}
+          <img class="article-cover" src="{{ .Params.cover }}" alt="Article Cover" />
+        {{ end }}
         <h1 class="article-title">{{ .Title }}</h1>
         <div class="article-meta">
           <div class="article-meta-item">

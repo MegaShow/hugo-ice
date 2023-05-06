@@ -1,0 +1,4 @@
+baseURL = 'https://docs.icytown.com/hugo-ice'
+languageCode = 'zh-CN'
+title = 'Hugo Ice'
+theme = 'hugo-ice'

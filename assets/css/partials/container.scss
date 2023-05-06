@@ -5,7 +5,7 @@
 .container {
   align-items: flex-start;
   display: flex;
-  margin: 20px auto;
+  margin: 40px auto;
   max-width: v.$screen-md-max;
 
   @include screen-md {

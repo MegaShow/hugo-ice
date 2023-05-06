@@ -8,14 +8,16 @@
 
 Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题。
 
-## 使用指引
-
-待补充~
-
 ## 示例站点
 
 - hugo ice demo: https://hugo-ice-demo.netlify.app
 - icytown: https://icytown.com
+
+## 使用指引
+
+请阅读 [https://docs.icytown.com/hugo-ice](https://docs.icytown.com/hugo-ice)。
+
+如果存在功能请求、漏洞发现，可通过 Issues 提交相关信息。
 
 ## 特别鸣谢
 
