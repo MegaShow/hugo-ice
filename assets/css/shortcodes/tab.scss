@@ -10,11 +10,13 @@
 .ice-tab-header {
   border-bottom: solid 1px #ccc;
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding-left: 0 !important;
 
   li {
     border-right: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c8;
     cursor: pointer;
     list-style: none;
     padding: 5px 10px;

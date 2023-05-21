@@ -7,6 +7,7 @@
   display: flex;
   margin: 40px auto;
   max-width: v.$screen-md-max;
+  padding: 0 20px;
 
   @include screen-md {
     max-width: v.$screen-md-max;
@@ -20,13 +21,12 @@
   .main-section {
     margin: 0 auto;
     max-width: v.$screen-sm-max;
-    padding: 0 20px;
     width: 100%;
   }
 
   // 侧栏
   .sidebar {
-    padding-left: 20px;
+    padding-left: 40px;
     position: sticky;
     top: 20px;
     width: 260px;

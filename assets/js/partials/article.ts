@@ -5,7 +5,7 @@ const copySuccessButton = iconCopySuccessHTML({ fill: '#2aa766', height: 20, wid
 
 /** 初始化代码块 */
 export function initCodeBlock() {
-  // 添加复制按钮
+  // 为高亮代码块添加复制按钮
   document.querySelectorAll('.article .highlight').forEach(codeBlock => {
     const code = codeBlock.querySelector<HTMLElement>('code[data-lang]');
 
@@ -15,9 +15,8 @@ export function initCodeBlock() {
     button.title = 'Copy';
     button.innerHTML = copyButton;
     button.addEventListener('click', () => {
-      console.log(code.textContent);
       navigator.clipboard
-        .writeText(code.textContent)
+        .writeText(code.textContent.trim())
         .then(() => {
           button.blur();
           button.innerHTML = copySuccessButton;

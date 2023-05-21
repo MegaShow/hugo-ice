@@ -31,11 +31,14 @@
 .article-meta {
   color: #747474;
   display: flex;
+  flex-wrap: wrap;
   font-size: 1rem;
-  gap: 16px;
+  gap: 8px 16px;
+  margin-top: 8px;
 
   .article-meta-item {
     display: flex;
+    flex-wrap: wrap;
     gap: 4px;
   }
 
@@ -142,28 +145,44 @@
   }
 
   // 代码块
-  .highlight {
+  pre {
+    background-color: #f0f3f3;
+    font-size: 1rem;
+    line-height: 1.6;
     margin-bottom: 1.5rem;
+    overflow: auto;
+    padding: 8px;
     position: relative;
 
     code {
       font-family: var(--font-family-code);
     }
 
+    &:hover .copy-button {
+      opacity: 1;
+    }
+  }
+
+  .highlight {
+    margin-bottom: 1.5rem;
+    position: relative;
+
     pre {
-      font-size: 1rem;
-      line-height: 1.6;
       margin: 0;
-      padding: 8px 0 8px 8px;
     }
 
     tr > :first-child pre {
       background-color: #c5e5f0 !important;
+      padding-right: 0;
     }
 
     tr > :last-child pre {
       padding-left: 12px;
       padding-right: 12px;
+    }
+
+    > :first-child {
+      overflow: auto;
     }
 
     .copy-button {
@@ -182,10 +201,6 @@
         color: #292d32;
         cursor: pointer;
       }
-    }
-
-    > :first-child {
-      overflow: auto;
     }
 
     &:hover .copy-button {
@@ -215,7 +230,7 @@
   // 引用
   /* stylelint-disable-next-line no-descending-specificity */
   p code {
-    background: #e0e5e5;
+    background-color: #e0e5e5;
     font-family: var(--font-family-code);
     font-size: 14px;
     margin: 0 4px;

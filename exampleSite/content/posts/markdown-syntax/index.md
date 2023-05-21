@@ -100,6 +100,10 @@ _蒹葭萋萋_，_白露未晞_。所谓伊人，在水之湄。
 
 # 代码块
 
+```
+Hello, hugo ice! Hello, MegaShow!
+```
+
 ```go
 package main
 
