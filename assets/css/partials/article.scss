@@ -157,10 +157,6 @@
     code {
       font-family: var(--font-family-code);
     }
-
-    &:hover .copy-button {
-      opacity: 1;
-    }
   }
 
   .highlight {
@@ -259,17 +255,28 @@
 
 // 目录
 .sidebar {
-  nav {
+  .catalog {
     border-left: 1px solid #e7e7e7;
     font-size: 1rem;
 
+    .catalog-title {
+      font-weight: bold;
+      padding-left: 16px;
+    }
+
+    nav {
+      margin: 8px 0;
+    }
+
     ul {
+      line-height: 1.5rem;
       list-style-type: none;
+      margin: 0;
       padding-left: 16px;
 
       /* stylelint-disable-next-line no-descending-specificity */
       a {
-        color: black;
+        color: #393f46;
         text-decoration: none;
 
         &:hover {

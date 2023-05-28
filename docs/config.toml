@@ -2,3 +2,42 @@ baseURL = 'https://docs.icytown.com/hugo-ice'
 languageCode = 'zh-CN'
 title = 'Hugo Ice'
 theme = 'hugo-ice'
+
+disableKinds = ["RSS", "sitemap"]
+hasCJKLanguage = true
+
+[author]
+name = 'MegaShow'
+
+[markup]
+  [markup.highlight]
+    lineNos = true
+    style = 'manni'
+    tabWidth = 4
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+    ordered = false
+
+[menu]
+  [[menu.header]]
+    name = '首页'
+    url = '/'
+    weight = 1
+  [[menu.header]]
+    name = '快速上手'
+    url = '/getting-started/'
+    weight = 2
+  [[menu.header]]
+    name = '短代码'
+    url = '/shortcodes/'
+    weight = 2
+  [[menu.header]]
+    name = 'GitHub'
+    url = 'https://github.com/megashow/hugo-ice'
+    weight = 100
+
+[params]
+  beian = '粤ICP备17101777号-1'
+  mainSections = ['posts']
+  startYear = 2016

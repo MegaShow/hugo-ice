@@ -39,7 +39,10 @@
     {{ $hasToc := ge (len .TableOfContents) 100 }}
     {{ if $hasToc }}
       <aside class="sidebar">
-        {{ .TableOfContents }}
+        <section class="catalog">
+          <label class="catalog-title">目录</label>
+          {{ .TableOfContents }}
+        </section>
       </aside>
     {{ end }}
   </main>
