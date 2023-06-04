@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <main class="container container-archives">
+    <section class="archives">
+      {{ $pages := where .Site.RegularPages "Type" "in" $.Site.Params.mainSections }}
+      {{ range $pages.GroupByDate "2006" }}
+        <h2 class="archives-title"><a href="#{{ .Key }}">{{ .Key }}</a></h2>
+        <ul class="archives-list">
+          {{ range .Pages }}
+            <li>
+              <span class="archives-time">{{ .PublishDate.Format "01-02" }}</span>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </section>
+  </main>
+{{ end }}

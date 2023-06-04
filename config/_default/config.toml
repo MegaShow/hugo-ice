@@ -5,6 +5,9 @@
     endLevel = 6
     ordered = false
 
+[params]
+  mainSections = ['posts']
+
 [params.libraries]
 [params.libraries.fontawesome]
   enable = true

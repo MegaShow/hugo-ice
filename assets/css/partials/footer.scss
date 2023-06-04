@@ -1,21 +1,24 @@
 .footer {
-  color: var(--footer-color);
-  background-color: var(--footer-bg);
+  font-size: 0.875rem;
+  padding: 20px 0 80px;
+  text-align: center;
 
   a {
-    color: var(--footer-color);
-    text-decoration: none;
     border-bottom: 1px solid #ccc;
+    color: #222;
+    text-decoration: none;
   }
 
   a:hover {
-    border-bottom-color: var(--footer-color);
+    color: #0056b3;
+    border-bottom: 1px solid #0056b3;
+  }
+
+  div {
+    margin-top: 5px;
   }
 }
 
-.footer-container {
-  margin: 0 auto;
-  padding: 20px 0 80px;
-  font-size: 14px;
-  text-align: center;
+.footer-separator {
+  margin: 0 5px;
 }
