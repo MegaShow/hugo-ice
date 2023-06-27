@@ -91,12 +91,12 @@
 
   :hover {
     background: var(--header-link-background);
+    transition: 800ms;
   }
 
   a {
     display: block;
     padding: 8px 16px;
-    transition: 500ms;
   }
 }
 
