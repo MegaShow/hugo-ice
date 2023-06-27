@@ -4,7 +4,6 @@ about: Create a report to help us improve | 创建报告以帮助我们改进
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
 **Describe | 描述**
