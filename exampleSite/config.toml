@@ -25,6 +25,10 @@ hasCJKLanguage = true
   url = '/'
   weight = 1
 [[menu.header]]
+  name = '归档'
+  url = '/archives'
+  weight = 2
+[[menu.header]]
   name = '关于'
   url = '/about'
   weight = 100
@@ -41,4 +45,3 @@ hasCJKLanguage = true
 # [params.libraries.fontawesome]
 #   enable = true
 #   url = <your-font-awesome-resource-url>
-
