@@ -29,10 +29,6 @@ name = 'MegaShow'
     url = '/getting-started/'
     weight = 2
   [[menu.header]]
-    name = '短代码'
-    url = '/shortcodes/'
-    weight = 2
-  [[menu.header]]
     name = 'GitHub'
     url = 'https://github.com/megashow/hugo-ice'
     weight = 100

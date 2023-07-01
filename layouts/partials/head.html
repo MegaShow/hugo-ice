@@ -20,12 +20,6 @@
     <link rel="shortcut icon" href="{{ relLangURL .Site.Params.Favicon }}" />
   {{ end -}}
 
-  {{/* 导入 FontAwesome */}}
-  {{ $fontawesome := .Site.Params.Libraries.FontAwesome }}
-  {{ if $fontawesome.Enable }}
-    <link rel="stylesheet" href="{{ $fontawesome.URL }}" />
-  {{ end -}}
-
   {{/* 导入主题 CSS */}}
   {{ $opts := dict "transpiler" "dartsass" }}
   {{ $style := resources.Get "css/main.scss" | resources.ToCSS $opts | resources.Minify | resources.Fingerprint }}

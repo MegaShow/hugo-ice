@@ -15,14 +15,18 @@ export function initCodeBlock() {
     button.title = 'Copy';
     button.innerHTML = copyButton;
     button.addEventListener('click', () => {
-      navigator.clipboard
-        .writeText(code.textContent.trim())
-        .then(() => {
-          button.blur();
-          button.innerHTML = copySuccessButton;
-          setTimeout(() => (button.innerHTML = copyButton), 2000);
-        })
-        .catch(err => console.error(err));
+      const text = code?.textContent?.trim();
+      if (text) {
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            button.blur();
+            button.innerHTML = copySuccessButton;
+            setTimeout(() => (button.innerHTML = copyButton), 2000);
+          })
+          // eslint-disable-next-line no-console
+          .catch(err => console.error(err));
+      }
     });
 
     codeBlock.appendChild(button);

@@ -29,6 +29,8 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: npm run build
+      - name: TypeScript Check
+        run: npm run ts-check
       - name: ESLint
         run: npm run eslint
       - name: StyleLint

@@ -3,56 +3,55 @@
 
 // 顶部栏
 .header {
-  background: var(--header-background);
-  color: var(--header-color);
-}
-
-// 顶部栏容器
-.header-container {
-  align-items: center;
-  display: flex;
-  margin: 0 auto;
-  max-width: v.$screen-lg-min;
-  padding: 12px;
-
-  @include screen-md {
-    max-width: v.$screen-md-min;
-  }
-
-  @include screen-sm {
-    display: block;
-  }
+  background: #3c8cff;
+  color: #f5f5f5;
 
   a {
-    color: var(--header-color);
+    color: #f5f5f5;
     text-decoration: none;
   }
 }
 
-// 顶部栏内部包装
-.header-inner {
+// 顶部栏容器
+.header-wrapper {
   align-items: center;
+  box-sizing: border-box;
   display: flex;
-  margin-right: 10px;
+  gap: 10px;
+  margin: 0 auto;
+  max-width: v.$screen-lg-min;
+  padding: 12px;
+
+  @include screen-sm {
+    display: block;
+  }
 }
 
-// logo相关
+// 站点品牌容器, 包含菜单按钮
+.header-brand-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  min-height: 55px;
+}
+
+// 站点品牌相关
 .header-brand {
   display: flex;
+  gap: 10px;
 
-  h1 {
+  .header-brand-logo {
+    width: 32px;
+  }
+
+  .header-brand-title {
     font-size: 24px;
     margin: 0;
   }
-
-  img {
-    margin-right: 10px;
-    width: 32px;
-  }
 }
 
-// 导航
-.header-nav {
+// 导航菜单
+.header-menu {
   flex-grow: 1;
   text-align: right;
 
@@ -60,16 +59,16 @@
     display: none;
     text-align: center;
 
-    &.header-nav-open {
+    &.header-menu-open {
       display: block;
-      border-top: 1px solid var(--header-color);
+      border-top: 1px solid #f5f5f5;
       margin-top: 8px;
     }
   }
 }
 
-// 导航菜单
-.header-nav-menu {
+// 导航菜单列表
+.header-menu-list {
   display: block;
   margin: 8px 0;
   padding: 0;
@@ -80,7 +79,7 @@
 }
 
 // 导航菜单选项
-.header-nav-item {
+.header-menu-item {
   display: inline-block;
   list-style: none;
   margin: 0 4px;
@@ -90,7 +89,7 @@
   }
 
   :hover {
-    background: var(--header-link-background);
+    background: rgb(255 255 255 / 25%);
     transition: 800ms;
   }
 
@@ -100,15 +99,20 @@
   }
 }
 
-// 导航菜单切入切出按钮
-.header-nav-toggle {
+// 导航菜单按钮
+.header-menu-toggle {
   display: none;
   flex-grow: 1;
-  font-size: 20px;
-  margin: 13.5px 5px;
   text-align: right;
 
   @include screen-sm {
     display: block;
+  }
+
+  svg {
+    fill: white;
+    height: 24px;
+    margin-top: 4px;
+    width: 24px;
   }
 }
