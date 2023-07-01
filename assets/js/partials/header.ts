@@ -1,21 +1,23 @@
-/** 展示或隐藏顶部菜单 */
-function showOrHideHeaderNav() {
-  const icon = document.querySelector('.header-nav-toggle i');
-  const nav = document.querySelector('.header-nav');
+import { iconMenuHTML, iconXMarkHTML } from '../resources/icon';
 
-  if (icon.classList.contains('fa-bars')) {
+/** 展示或隐藏顶部菜单 */
+function showOrHideHeaderMenu() {
+  const menu = document.querySelector('.header-menu');
+  const toggle = document.querySelector('.header-menu-toggle');
+
+  if (!menu?.classList.contains('header-menu-open')) {
     // 切出
-    icon.classList.replace('fa-bars', 'fa-xmark');
-    nav.classList.add('header-nav-open');
+    menu?.classList.add('header-menu-open');
+    toggle && (toggle.innerHTML = iconXMarkHTML());
   } else {
     // 隐藏
-    icon.classList.replace('fa-xmark', 'fa-bars');
-    nav.classList.remove('header-nav-open');
+    menu.classList.remove('header-menu-open');
+    toggle && (toggle.innerHTML = iconMenuHTML());
   }
 }
 
-/** 顶部加载逻辑 */
-export function onLoad() {
-  // 绑定菜单按键点击事件
-  document.querySelector('.header-nav-toggle').addEventListener('click', showOrHideHeaderNav);
+/** 初始化头部菜单按钮 */
+export function initHeaderMenuToggle() {
+  // 为头部导航菜单按钮添加切入切出效果
+  document.querySelector('.header-menu-toggle')?.addEventListener('click', showOrHideHeaderMenu);
 }

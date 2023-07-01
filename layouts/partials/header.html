@@ -1,22 +1,22 @@
 <header class="header">
-  <div class="header-container">
-    <nav class="header-inner">
+  <div class="header-wrapper">
+    <nav class="header-brand-wrapper">
       <a class="header-brand" href="{{ .Site.BaseURL }}">
-        {{ if .Site.Params.Favicon }}
-        <img src="{{ relLangURL .Site.Params.Favicon }}" alt="Logo">
+        {{ with .Site.Params.Favicon }}
+          <img class="header-brand-logo" src="{{ relLangURL . }}" alt="Logo" />
         {{ end }}
-        <h1>{{ .Site.Title }}</h1>
+        <h1 class="header-brand-title">{{ .Site.Title }}</h1>
       </a>
-      <div class="header-nav-toggle">
-        <i class="fa-solid fa-bars"></i>
+      <div class="header-menu-toggle">
+        {{ partial "icon" "menu" }}
       </div>
     </nav>
-    <nav class="header-nav">
-      <ul class="header-nav-menu">
+    <nav class="header-menu">
+      <ul class="header-menu-list">
         {{ range .Site.Menus.header }}
-        <li class="header-nav-item">
-          <a href="{{ .URL }}"> {{ .Name }}</a>
-        </li>
+          <li class="header-menu-item">
+            <a href="{{ .URL }}"> {{ .Name }}</a>
+          </li>
         {{ end }}
       </ul>
     </nav>

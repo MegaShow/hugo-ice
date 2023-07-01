@@ -14,7 +14,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    project: ['./tsconfig.eslint.json'],
+    project: ['./tsconfig.json'],
     sourceType: 'module',
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, no-undef
     tsconfigRootDir: __dirname,
@@ -37,5 +37,6 @@ module.exports = {
     'default-case': 'error',
     eqeqeq: ['error', 'always'],
     'no-alert': 'error',
+    'no-console': 'error',
   },
 };

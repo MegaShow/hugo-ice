@@ -38,10 +38,3 @@ hasCJKLanguage = true
   startYear = 2022
   beian = ''
   mainSections = ['posts']
-
-# 第三方依赖
-[params.libraries]
-# 第三方依赖 Font-Awesome，该依赖默认启用，如果禁用，主题部分功能将不能正常工作
-# [params.libraries.fontawesome]
-#   enable = true
-#   url = <your-font-awesome-resource-url>
