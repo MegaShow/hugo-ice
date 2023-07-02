@@ -1,6 +1,7 @@
 ---
 title: "快速上手"
 date: 2023-05-28T00:00:00+08:00
+lastMod: 2023-07-02T00:00:00+08:00
 ---
 
 ## 前置要求
@@ -30,7 +31,7 @@ Hugo Ice 支持以下三种安装方式，推荐使用前两种方式。
 ```bash
 git submodule add https://github.com/megashow/hugo-ice themes/hugo-ice
 ```
-在 `config.toml` 中指定主题。
+在 `hugo.toml` 中指定主题。
 
 ```toml
 theme = 'hugo-ice'
@@ -44,14 +45,14 @@ theme = 'hugo-ice'
 hugo mod init github.com/<你的Github账号名>/<你的站点仓库名>
 ```
 
-Hugo 不使用 Golang 原生的 GOPROXY 配置，因此如果需要配置代理可以修改 `config.toml` 文件。
+Hugo 不使用 Golang 原生的 GOPROXY 配置，因此如果需要配置代理可以修改 `hugo.toml` 文件。
 
 ```toml
 [module]
   proxy = 'https://goproxy.cn,direct'
 ```
 
-在 `config.toml` 中指定主题。
+在 `hugo.toml` 中指定主题。
 
 ```toml
 theme = 'icytown.com/hugo-ice'
@@ -64,7 +65,7 @@ hugo mod tidy
 ```
 {{% /Tab %}}
 {{% Tab header="手动下载安装" %}}
-可直接前往 [hugo-ice](https://github.com/megashow/hugo-ice) 下载主题文件夹到本地文件夹 `themes/hugo-ice` 下，同时修改 `config.toml` 配置指定主题。
+可直接前往 [hugo-ice](https://github.com/megashow/hugo-ice) 下载主题文件夹到本地文件夹 `themes/hugo-ice` 下，同时修改 `hugo.toml` 配置指定主题。
 
 ```toml
 theme = 'hugo-ice'

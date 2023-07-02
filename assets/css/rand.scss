@@ -1,0 +1,13 @@
+$rand-colors: (
+  0: #168cff,
+  1: #0fc6c2,
+  2: #ff7d00,
+  3: #ff5722,
+  4: #eb0aa4,
+);
+
+@each $idx, $color in $rand-colors {
+  .r-background-color-before[data-rand='#{$idx}']::before {
+    background-color: $color;
+  }
+}

@@ -5,16 +5,16 @@
     {{ if eq (.Site.LastChange.Format "2006") "0001" }}
       {{ $lastChange = now }}
     {{ end }}
-    {{ if or (eq (string .Site.Params.StartYear) ($lastChange.Format "2006")) (not .Site.Params.StartYear) }}
+    {{ if or (eq (string .Site.Params.footer.since) ($lastChange.Format "2006")) (not .Site.Params.footer.since) }}
       <span>© {{ .Site.LastChange.Format "2006" }}</span>
     {{ else }}
-      <span>© {{ .Site.Params.StartYear }} - {{ $lastChange.Format "2006" }}</span>
+      <span>© {{ .Site.Params.footer.since }} - {{ $lastChange.Format "2006" }}</span>
     {{ end }}
-    <span>{{ .Site.Author.name }}</span>
+    <span>{{ .Site.Params.author.name }}</span>
     {{/* 备案信息 */}}
-    {{ if .Site.Params.Beian }}
+    {{ if .Site.Params.footer.beian }}
       <span class="footer-separator">|</span>
-      <a href="https://beian.miit.gov.cn/" target="_blank">{{ .Site.Params.Beian }}</a>
+      <a href="https://beian.miit.gov.cn/" target="_blank">{{ .Site.Params.footer.beian }}</a>
     {{ end }}
   </div>
 </footer>

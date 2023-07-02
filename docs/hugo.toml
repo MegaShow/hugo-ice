@@ -6,9 +6,6 @@ theme = 'hugo-ice'
 disableKinds = ["RSS", "sitemap"]
 hasCJKLanguage = true
 
-[author]
-name = 'MegaShow'
-
 [markup]
   [markup.highlight]
     lineNos = true
@@ -34,6 +31,10 @@ name = 'MegaShow'
     weight = 100
 
 [params]
-  beian = '粤ICP备17101777号-1'
   mainSections = ['posts']
-  startYear = 2016
+  favicon = 'favicon.svg'
+  [params.author]
+    name = 'MegaShow'
+  [params.footer]
+    since = 2016
+    beian = '粤ICP备17101777号-1'

@@ -14,15 +14,15 @@
     "stylelint": "stylelint assets/css/**/*.scss --fix --cache --quiet"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.59.1",
-    "@typescript-eslint/parser": "^5.59.1",
-    "eslint": "^8.39.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.8",
     "prettier-plugin-go-template": "^0.0.13",
-    "stylelint": "^15.6.0",
+    "stylelint": "^15.9.0",
     "stylelint-config-standard": "^33.0.0",
-    "stylelint-config-standard-scss": "^9.0.0",
-    "typescript": "^5.0.4"
+    "stylelint-config-standard-scss": "^10.0.0",
+    "typescript": "^5.1.6"
   }
 }

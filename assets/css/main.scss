@@ -1,3 +1,7 @@
+// 基本样式
+@use 'base.scss';
+@use 'rand.scss';
+
 // 组件样式
 @use 'partials/archives.scss';
 @use 'partials/article';
