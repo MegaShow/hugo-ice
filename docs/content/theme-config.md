@@ -7,7 +7,7 @@ Hugo Ice 在 Hugo 基础配置外，额外支持了一些特有功能的配置�
 
 > 以下配置均使用 TOML 语法, 可自行转换成 YAML 或 JSON。
 
-## 站点基础配置
+## 基本信息
 
 站点的基础配置指定了站点的链接、语言、名称、使用主题。当主题指定为 Hugo Ice 时，特有功能配置方可生效。
 
@@ -25,23 +25,15 @@ Hugo Ice 在首页和归档页面等文章列表中，仅展示标注为主 sect
   mainSections = ['posts', 'docs']  # 默认为 ['posts']
 ```
 
-## 站点样式
-
-### 站点信息
-
-在配置站点作者信息后，Hugo Ice 将在站点底部展示作者名字。
-
-```toml
-[author]
-  name = 'MegaShow' # 作者名字
-```
-
-指定站点的起始时间，Hugo Ice 将在站点底部展示站点的时间信息。
+配置站点作者信息，可在其他需要的场景使用作者信息。
 
 ```toml
 [params]
-  startYear = 2022
+  [params.author]
+    name = 'MegaShow' # 作者名字
 ```
+
+## 样式和资源
 
 ### Favicon
 
@@ -50,15 +42,6 @@ Hugo Ice 在首页和归档页面等文章列表中，仅展示标注为主 sect
 ```toml
 [params]
   favicon = 'favicon.svg'
-```
-
-### 备案信息
-
-国内站点需要在网站底部展示备案号信息，并需要支持跳转到工信部备案官网。Hugo Ice 已支持展示该信息，仅需要配置站点的备案号即可。
-
-```toml
-[params]
-  beian = '粤ICP备xxxxxxxx号-x'
 ```
 
 ## 菜单
@@ -79,4 +62,30 @@ Hugo Ice 允许通过 `menu.header` 指定页面顶部的菜单。
   name = '关于'
   url = '/about'
   weight = 100
+```
+
+## 页尾
+
+### CopyRight
+
+在配置站点作者信息后，Hugo Ice 将在站点底部 CopyRight 信息区展示作者名字。
+
+### 站点时间
+
+指定站点的成立时间，Hugo Ice 将在站点底部展示站点的时间信息。
+
+```toml
+[params]
+  [params.footer]
+    since = 2022
+```
+
+### 备案信息
+
+国内站点需要在网站底部展示备案号信息，并需要支持跳转到工信部备案官网。Hugo Ice 已支持展示该信息，仅需要配置站点的备案号即可。
+
+```toml
+[params]
+  [params.footer]
+    beian = '粤ICP备xxxxxxxx号-x'
 ```

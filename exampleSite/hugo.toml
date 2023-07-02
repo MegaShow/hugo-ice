@@ -3,10 +3,8 @@ languageCode = 'zh-cn'
 title = 'Hugo Ice Demo Site'
 theme = 'hugo-ice'
 
+disableKinds = ["RSS", "sitemap"]
 hasCJKLanguage = true
-
-[author]
-  name = 'MegaShow'
 
 [markup]
   [markup.highlight]
@@ -33,8 +31,16 @@ hasCJKLanguage = true
   url = '/about'
   weight = 100
 
+# 主题参数
 [params]
-  favicon = 'favicon.svg'
-  startYear = 2022
-  beian = ''
-  mainSections = ['posts']
+  mainSections = ['posts'] # 主 Sections 列表
+  favicon = 'favicon.svg' # 站点 Favicon 图标
+
+  # 作者信息
+  [params.author]
+    name = 'MegaShow' # 作者昵称
+
+  # 页脚
+  [params.footer]
+    since = 2022 # 站点成立时间
+    beian = '' # 备案信息
