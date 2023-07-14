@@ -50,6 +50,28 @@
   }
 }
 
+// 文章摘要
+.article-summary {
+  line-height: 2;
+  margin: 1.125rem 0;
+}
+
+// 文章阅读全文
+.article-read-more {
+  margin-top: -0.75rem;
+
+  .article-read-more-link {
+    border-bottom: 1px solid #007bff;
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 1px solid #0056b3;
+      color: #0056b3;
+    }
+  }
+}
+
 // 正文内容
 .article {
   font-size: 1.125rem;
