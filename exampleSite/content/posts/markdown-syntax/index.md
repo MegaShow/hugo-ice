@@ -1,12 +1,11 @@
 ---
-title: 'Markdown语法'
-date: '2022-10-10T00:00:00+08:00'
+title: Markdown语法
+date: 2022-10-10T00:00:00+08:00
+lastMod: 2023-07-11T00:00:00+08:00
 cover: markdown.jpg
 ---
 
 Hugo 使用兼容 CommomMark 标准的 Goldmark 作为 Markdown 的解析库，本文将展示 Hugo 所支持的 Markdown 基本语法，用于校验语法的支持程度和渲染效果。
-
-<!--more-->
 
 # 标题
 
