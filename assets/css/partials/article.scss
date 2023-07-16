@@ -50,6 +50,21 @@
   }
 }
 
+// 文章标签
+.article-tags {
+  gap: 8px !important;
+}
+
+.article-tag {
+  color: #747474;
+  display: flex;
+  text-decoration: none;
+
+  &:hover {
+    color: #0056b3;
+  }
+}
+
 // 文章摘要
 .article-summary {
   line-height: 2;

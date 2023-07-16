@@ -2,6 +2,7 @@
 title: Markdown语法
 date: 2022-10-10T00:00:00+08:00
 lastMod: 2023-07-11T00:00:00+08:00
+tags: [Markdown]
 cover: markdown.jpg
 ---
 

@@ -1,16 +1,16 @@
 {{ define "main" }}
-  <main class="container container-archives">
-    <section class="archives">
+  <main class="container">
+    <section class="term">
       {{ $pages := where .Site.RegularPages "Type" "in" $.Site.Params.mainSections }}
       {{ range $idx, $group := $pages.GroupByDate "2006" }}
-        <h2 class="archives-title r-background-color-before" data-rand="{{ mod $idx 5 }}">
-          <a href="#{{ .Key }}">{{ $group.Key }}</a>
+        <h2 class="term-title r-background-color-before" data-rand="{{ mod $idx 5 }}">
+          <a class="term-link" href="#{{ .Key }}">{{ $group.Key }}</a>
         </h2>
-        <ul class="archives-list">
+        <ul class="term-article-list">
           {{ range $group.Pages }}
             <li>
-              <span class="archives-time">{{ .PublishDate.Format "01-02" }}</span>
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              <span class="term-article-time">{{ .PublishDate.Format "01-02" }}</span>
+              <a class="term-link" href="{{ .Permalink }}">{{ .Title }}</a>
             </li>
           {{ end }}
         </ul>

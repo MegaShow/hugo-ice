@@ -1,13 +1,13 @@
 // 基本样式
-@use 'base.scss';
-@use 'rand.scss';
+@use 'base';
+@use 'rand';
 
 // 组件样式
-@use 'partials/archives.scss';
 @use 'partials/article';
 @use 'partials/container';
 @use 'partials/footer';
 @use 'partials/header';
+@use 'partials/taxonomy';
 
 // 短代码样式
 @use 'shortcodes/tab';

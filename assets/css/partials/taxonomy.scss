@@ -1,18 +1,42 @@
-.archives {
-  border-left: 4px solid #e5e5e5;
-  margin-left: 40px;
+.taxonomy {
+  margin: 0 60px;
 
+  p {
+    font-size: 1.125rem;
+  }
+}
+
+.taxonomy-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.taxonomy-terms {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.125rem;
+  gap: 8px 16px;
+}
+
+.taxonomy-term {
   a {
+    border-bottom: 1px solid #9c9c9c;
     color: #222;
     text-decoration: none;
   }
 
   a:hover {
+    border-bottom: 1px solid #0056b3;
     color: #0056b3;
   }
 }
 
-.archives-title {
+.term {
+  border-left: 4px solid #e5e5e5;
+  margin-left: 40px;
+}
+
+.term-title {
   margin-top: 40px;
   padding-left: 20px;
 
@@ -27,7 +51,7 @@
   }
 }
 
-.archives-list {
+.term-article-list {
   padding-left: 20px;
 
   li {
@@ -46,6 +70,15 @@
   }
 }
 
-.archives-time {
+.term-link {
+  color: #222;
+  text-decoration: none;
+
+  &:hover {
+    color: #0056b3;
+  }
+}
+
+.term-article-time {
   font-size: 14px;
 }
