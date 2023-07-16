@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <main class="container">
+    {{ if eq .Kind "taxonomy" }}
+      <section class="taxonomy">
+        <h1 class="taxonomy-title">{{ .Title }}</h1>
+        <p>目前共计有 {{ len .Data.Terms }} 项内容。</p>
+        <div class="taxonomy-terms">
+          {{ range .Data.Terms.ByCount }}
+            <div class="taxonomy-term">
+              <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+              <span>({{ .Count }})</span>
+            </div>
+          {{ end }}
+        </div>
+      </section>
+    {{ else }}
+      <section class="term">
+        <h1 class="term-title r-background-color-before" data-rand="0">{{ .Title }}</h1>
+        <ul class="term-article-list">
+          {{ range .Pages }}
+            <li>
+              <span class="term-article-time">{{ .PublishDate.Format "01-02" }}</span>
+              <a class="term-link" href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </section>
+    {{ end }}
+  </main>
+{{ end }}
