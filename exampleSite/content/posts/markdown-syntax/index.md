@@ -8,6 +8,8 @@ cover: markdown.jpg
 
 Hugo 使用兼容 CommomMark 标准的 Goldmark 作为 Markdown 的解析库，本文将展示 Hugo 所支持的 Markdown 基本语法，用于校验语法的支持程度和渲染效果。
 
+<!--more-->
+
 # 标题
 
 # Header Level 1
