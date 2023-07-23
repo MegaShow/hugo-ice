@@ -32,7 +32,6 @@ hasCJKLanguage = true
 
 [params]
   mainSections = ['posts']
-  favicon = 'favicon.svg'
   [params.author]
     name = 'MegaShow'
   [params.footer]

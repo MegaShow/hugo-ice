@@ -1,0 +1,9 @@
+{{/* 获取参数 */}}
+{{- $filename := .Get 0 -}}
+{{- if not $filename -}}
+  {{- errorf "shortcode 'Import' miss paramater filename" -}}
+{{- end -}}
+
+{{- with $.Page.Resources.Get $filename -}}
+  {{- .Content | safeHTML -}}
+{{- end -}}
