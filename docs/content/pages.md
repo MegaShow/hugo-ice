@@ -14,3 +14,13 @@ title: 归档
 date: 2023-07-02T00:00:00+08:00
 layout: archives
 ```
+
+## 空白页
+
+Hugo Ice 提供了空白布局 `blank`，可以配合使用 Import 短代码导入外部文件的 HTML。
+
+```yaml
+title: 自定义页面
+date: 2023-07-02T00:00:00+08:00
+layout: blank
+```

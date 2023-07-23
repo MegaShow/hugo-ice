@@ -14,6 +14,10 @@ Hugo 提供了丰富的 shortcode 短代码能力，本文将使用 Hugo ICE 额
 
 # 主题提供的短代码
 
+## Import
+
+{{< Import "test.html" >}}
+
 ## Tab
 
 {{< TabGroup >}}
