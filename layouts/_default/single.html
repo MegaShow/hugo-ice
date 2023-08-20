@@ -45,6 +45,25 @@
         {{/* 通过正则给标题添加上锚点 */}}
         {{ .Content | replaceRE "(<h[1-6] id=\"(.+)\".*>)(.*)(</h[1-6]>)" "${1}${3}<a class=\"header-anchor\" href=\"#${2}\">#</a>${4}" | safeHTML }}
       </article>
+
+      {{/* 文章底部内容 */}}
+      <div class="article-footer">
+        {{ $mainPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+        <div>
+          {{ with $mainPages.Prev . }}
+            <a class="article-footer-link" href="{{ .RelPermalink }}">
+              {{ partial "icon" "left" }}{{ .Title }}
+            </a>
+          {{ end }}
+        </div>
+        <div>
+          {{ with $mainPages.Next . }}
+            <a class="article-footer-link" href="{{ .RelPermalink }}">
+              {{ .Title }}{{ partial "icon" "right" }}
+            </a>
+          {{ end }}
+        </div>
+      </div>
     </section>
 
     {{ $hasToc := ge (len .TableOfContents) 100 }}
