@@ -5,6 +5,7 @@ theme = 'hugo-ice'
 
 disableKinds = ["RSS", "sitemap"]
 hasCJKLanguage = true
+copyright = "本站点所有文章除特别声明外，均采用 CC BY-NC-SA 4.0 许可协议，转载请注明出处！"
 
 [markup]
   [markup.highlight]
@@ -38,7 +39,7 @@ hasCJKLanguage = true
 # 主题参数
 [params]
   mainSections = ['posts'] # 主 Sections 列表
-  favicon = 'favicon.svg' # 站点 Favicon 图标
+  favicon = 'favicon.svg'  # 站点 Favicon 图标
 
   # 作者信息
   [params.author]
@@ -47,4 +48,4 @@ hasCJKLanguage = true
   # 页脚
   [params.footer]
     since = 2022 # 站点成立时间
-    beian = '' # 备案信息
+    beian = ''   # 备案信息

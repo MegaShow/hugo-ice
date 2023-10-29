@@ -66,9 +66,15 @@ Hugo Ice 允许通过 `menu.header` 指定页面顶部的菜单。
 
 ## 页尾
 
-### CopyRight
+### 版权声明
 
 在配置站点作者信息后，Hugo Ice 将在站点底部 CopyRight 信息区展示作者名字。
+
+指定的站点的版权信息，将在主 section 的文章页面底部声明版权信息。
+
+```toml
+copyright = '本站点所有文章除特别声明外，均采用 CC BY-NC-SA 4.0 许可协议，转载请注明出处！'
+```
 
 ### 站点时间
 

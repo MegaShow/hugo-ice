@@ -4,12 +4,12 @@
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
     "budparr.language-hugo-vscode",
-    "bungcip.better-toml",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "jinliming2.vscode-go-template",
     "kaellarkin.hugo-shortcode-syntax",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "tamasfe.even-better-toml"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
