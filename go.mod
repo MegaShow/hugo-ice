@@ -1,3 +1,3 @@
-module icytown.com/hugo-ice
+module go.icytown.com/hugo-ice
 
-go 1.20
+go 1.21.0

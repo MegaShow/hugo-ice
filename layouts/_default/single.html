@@ -46,7 +46,18 @@
         {{ .Content | replaceRE "(<h[1-6] id=\"(.+)\".*>)(.*)(</h[1-6]>)" "${1}${3}<a class=\"header-anchor\" href=\"#${2}\">#</a>${4}" | safeHTML }}
       </article>
 
-      {{/* 文章底部内容 */}}
+      {{/* 版权声明, 只有 main section 的文章有版权声明 */}}
+      {{ if and (in .Site.Params.mainSections .Section) .Site.Copyright }}
+        <div class="article-copyright">
+          <ul>
+            <li><strong>文章作者</strong>{{ .Site.Params.author.name }}</li>
+            <li><strong>文章链接</strong><a href="{{ .Permalink }}">{{ .Permalink }}</a></li>
+            <li><strong>版权声明</strong>{{ .Site.Copyright }}</li>
+          </ul>
+        </div>
+      {{ end }}
+
+      {{/* 前后文章跳转链接 */}}
       <div class="article-footer">
         {{ $mainPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
         <div>
