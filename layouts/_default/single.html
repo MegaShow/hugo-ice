@@ -1,6 +1,8 @@
 {{ define "main" }}
   <main class="container container-single">
     <section class="main-section">
+      {{ $pageInMainSection := (in .Site.Params.mainSections .Section) }}
+
       {{/* 文章头部内容 */}}
       <div class="article-header">
         {{ if .Params.cover }}
@@ -47,7 +49,7 @@
       </article>
 
       {{/* 版权声明, 只有 main section 的文章有版权声明 */}}
-      {{ if and (in .Site.Params.mainSections .Section) .Site.Copyright }}
+      {{ if and $pageInMainSection .Site.Copyright }}
         <div class="article-copyright">
           <ul>
             <li><strong>文章作者</strong>{{ .Site.Params.author.name }}</li>
@@ -58,23 +60,25 @@
       {{ end }}
 
       {{/* 前后文章跳转链接 */}}
-      <div class="article-footer">
-        {{ $mainPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-        <div>
-          {{ with $mainPages.Prev . }}
-            <a class="article-footer-link" href="{{ .RelPermalink }}">
-              {{ partial "icon" "left" }}{{ .Title }}
-            </a>
-          {{ end }}
+      {{ if $pageInMainSection }}
+        <div class="article-footer">
+          {{ $mainPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+          <div>
+            {{ with $mainPages.Prev . }}
+              <a class="article-footer-link" href="{{ .RelPermalink }}">
+                {{ partial "icon" "left" }}{{ .Title }}
+              </a>
+            {{ end }}
+          </div>
+          <div>
+            {{ with $mainPages.Next . }}
+              <a class="article-footer-link" href="{{ .RelPermalink }}">
+                {{ .Title }}{{ partial "icon" "right" }}
+              </a>
+            {{ end }}
+          </div>
         </div>
-        <div>
-          {{ with $mainPages.Next . }}
-            <a class="article-footer-link" href="{{ .RelPermalink }}">
-              {{ .Title }}{{ partial "icon" "right" }}
-            </a>
-          {{ end }}
-        </div>
-      </div>
+      {{ end }}
     </section>
 
     {{ $hasToc := ge (len .TableOfContents) 100 }}

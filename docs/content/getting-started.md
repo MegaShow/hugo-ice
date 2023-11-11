@@ -55,7 +55,7 @@ Hugo 不使用 Golang 原生的 GOPROXY 配置，因此如果需要配置代理�
 在 `hugo.toml` 中指定主题。
 
 ```toml
-theme = 'icytown.com/hugo-ice'
+theme = 'go.icytown.com/hugo-ice'
 ```
 
 使用 `hugo mod tidy` 拉取主题内容。

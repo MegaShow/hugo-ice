@@ -19,8 +19,6 @@ Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题，当前处于 
   - [文章配置](front-matter/)
   - [页面配置](pages/)
   - [短代码](shortcodes/)
-- **扩展功能**
-  - [HTML Head](html-head/)
 
 ## 反馈
 
