@@ -1,5 +1,5 @@
 import { onLoad } from './event';
-import { initCodeBlock } from './partials/article';
+import { initCatalog, initCodeBlock } from './partials/article';
 import { initHeaderMenuToggle } from './partials/header';
 import { initTab } from './shortcodes/tab';
 
@@ -9,6 +9,7 @@ function init() {
   onLoad(initHeaderMenuToggle);
 
   // 文章内容
+  onLoad(initCatalog);
   onLoad(initCodeBlock);
 
   // 短代码

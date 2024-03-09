@@ -373,12 +373,23 @@
       margin: 0;
       padding-left: 16px;
 
+      a.active::before {
+        background-color: #007bff;
+        content: '';
+        height: 16px;
+        left: 40px;
+        margin-top: 4px;
+        position: absolute;
+        width: 4px;
+      }
+
       /* stylelint-disable-next-line no-descending-specificity */
       a {
         color: #393f46;
         text-decoration: none;
 
-        &:hover {
+        &:hover,
+        &.active {
           color: #007bff;
         }
       }
