@@ -67,8 +67,8 @@
 
 // 文章摘要
 .article-summary {
-  line-height: 2;
-  margin: 1.125rem 0;
+  line-height: 1.8;
+  margin: 1rem 0;
 }
 
 // 文章阅读全文
@@ -342,12 +342,16 @@
     align-items: center;
     color: #555;
     display: flex;
-    font-size: 1.125rem;
+    font-size: 1rem;
     margin-top: 8px;
     text-decoration: none;
 
     &:hover {
       color: #0056b3;
+
+      svg {
+        fill: #0056b3;
+      }
     }
   }
 }
