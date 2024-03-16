@@ -8,7 +8,7 @@ lastMod: 2023-07-02T00:00:00+08:00
 
 > 以下所有版本均为推荐版本，低于该版本或许功能不受影响。
 
-- Hugo Extended 0.111.3 或更高版本
+- Hugo Extended 0.123.7 或更高版本
 - Embedded Dart SaaS 1.56.1 或更高版本
 
 如果使用 Git 或 Hugo Module 特性，你还需要

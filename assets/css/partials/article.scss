@@ -67,8 +67,8 @@
 
 // 文章摘要
 .article-summary {
-  line-height: 2;
-  margin: 1.125rem 0;
+  line-height: 1.8;
+  margin: 1rem 0;
 }
 
 // 文章阅读全文
@@ -89,7 +89,7 @@
 
 // 正文内容
 .article {
-  font-size: 1.125rem;
+  font-size: 1rem;
 
   // 标题
   h1,
@@ -99,6 +99,7 @@
   h5,
   h6 {
     color: #222;
+    margin: 20px 0;
 
     .header-anchor {
       opacity: 0;
@@ -143,7 +144,7 @@
 
   // 段落
   p {
-    line-height: 2;
+    line-height: 1.8;
   }
 
   // 粗体
@@ -184,9 +185,9 @@
   // 代码块
   pre {
     background-color: #f0f3f3;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin-bottom: 16px;
     overflow: auto;
     padding: 8px;
     position: relative;
@@ -197,7 +198,7 @@
   }
 
   .highlight {
-    margin-bottom: 1.5rem;
+    margin-bottom: 16px;
     position: relative;
 
     pre {
@@ -341,12 +342,16 @@
     align-items: center;
     color: #555;
     display: flex;
-    font-size: 1.125rem;
+    font-size: 1rem;
     margin-top: 8px;
     text-decoration: none;
 
     &:hover {
       color: #0056b3;
+
+      svg {
+        fill: #0056b3;
+      }
     }
   }
 }
@@ -372,12 +377,23 @@
       margin: 0;
       padding-left: 16px;
 
+      a.active::before {
+        background-color: #007bff;
+        content: '';
+        height: 16px;
+        left: 40px;
+        margin-top: 4px;
+        position: absolute;
+        width: 4px;
+      }
+
       /* stylelint-disable-next-line no-descending-specificity */
       a {
         color: #393f46;
         text-decoration: none;
 
-        &:hover {
+        &:hover,
+        &.active {
           color: #007bff;
         }
       }
