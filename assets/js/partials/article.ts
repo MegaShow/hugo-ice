@@ -49,7 +49,7 @@ export function initCatalog() {
       return;
     }
     timer = setTimeout(() => {
-      const scrollTop = window.scrollY + 10;
+      const scrollTop = window.scrollY + 20;
       let currentTitle: CatalogItem | undefined = undefined;
       for (const titleInfo of titleInfos) {
         if (scrollTop >= titleInfo.offsetTop) {
@@ -64,7 +64,7 @@ export function initCatalog() {
         lastTitle = currentTitle;
       }
       timer = 0;
-    }, 200);
+    }, 300);
   });
 }
 
