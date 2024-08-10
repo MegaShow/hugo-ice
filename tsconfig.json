@@ -10,5 +10,5 @@
     "skipLibCheck": true,
     "strict": true
   },
-  "include": ["assets/js/**/*.ts", ".eslintrc.js"]
+  "include": ["assets/js/**/*.ts"]
 }

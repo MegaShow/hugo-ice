@@ -1,3 +1,3 @@
 module go.icytown.com/hugo-ice
 
-go 1.21.0
+go 1.22.0

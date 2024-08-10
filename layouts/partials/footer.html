@@ -1,14 +1,14 @@
 <footer class="footer">
   <div>
     {{/* 如果起始年份与当前年份相同或起始年份未设置，则只展示当前年份 */}}
-    {{ $lastChange := .Site.LastChange }}
-    {{ if eq (.Site.LastChange.Format "2006") "0001" }}
-      {{ $lastChange = now }}
+    {{ $lastmod := .Site.Lastmod }}
+    {{ if eq (.Site.Lastmod.Format "2006") "0001" }}
+      {{ $lastmod = now }}
     {{ end }}
-    {{ if or (eq (string .Site.Params.footer.since) ($lastChange.Format "2006")) (not .Site.Params.footer.since) }}
-      <span>© {{ .Site.LastChange.Format "2006" }}</span>
+    {{ if or (eq (string .Site.Params.footer.since) ($lastmod.Format "2006")) (not .Site.Params.footer.since) }}
+      <span>© {{ $lastmod.Format "2006" }}</span>
     {{ else }}
-      <span>© {{ .Site.Params.footer.since }} - {{ $lastChange.Format "2006" }}</span>
+      <span>© {{ .Site.Params.footer.since }} - {{ $lastmod.Format "2006" }}</span>
     {{ end }}
     <span>{{ .Site.Params.author.name }}</span>
     {{/* 备案信息 */}}

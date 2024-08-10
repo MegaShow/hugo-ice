@@ -1,26 +1,22 @@
-// eslint-disable-next-line no-undef
 module.exports = {
-  env: {
-    browser: true,
-    es2022: true,
-  },
+  root: true,
+  env: { browser: true, es2022: true },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:@typescript-eslint/stylistic-type-checked',
     'prettier',
   ],
-  overrides: [],
+  ignorePatterns: ['.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     project: ['./tsconfig.json'],
     sourceType: 'module',
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, no-undef
     tsconfigRootDir: __dirname,
   },
-  plugins: ['@typescript-eslint'],
-  root: true,
+  plugins: ['import'],
   rules: {
     'array-callback-return': ['error', { checkForEach: true }],
     'no-await-in-loop': 'error',
@@ -38,5 +34,17 @@ module.exports = {
     eqeqeq: ['error', 'always'],
     'no-alert': 'error',
     'no-console': 'error',
+    'sort-imports': ['error', { ignoreDeclarationSort: true }],
+
+    'import/newline-after-import': 'error',
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', ['external', 'internal'], ['parent', 'sibling', 'index'], ['object', 'type', 'unknown']],
+        'newlines-between': 'always',
+        alphabetize: { order: 'asc', orderImportKind: 'asc' },
+      },
+    ],
+    '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
   },
 };

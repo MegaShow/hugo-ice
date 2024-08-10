@@ -8,11 +8,15 @@ function showOrHideHeaderMenu() {
   if (!menu?.classList.contains('header-menu-open')) {
     // 切出
     menu?.classList.add('header-menu-open');
-    toggle && (toggle.innerHTML = iconXMarkHTML());
+    if (toggle) {
+      toggle.innerHTML = iconXMarkHTML();
+    }
   } else {
     // 隐藏
     menu.classList.remove('header-menu-open');
-    toggle && (toggle.innerHTML = iconMenuHTML());
+    if (toggle) {
+      toggle.innerHTML = iconMenuHTML();
+    }
   }
 }
 
