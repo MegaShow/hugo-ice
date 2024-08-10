@@ -2,5 +2,5 @@
   publish = "exampleSite/public"
   command = "./netlify.build.sh"
 
-[build.environment]
-  HUGO_VERSION = "0.111.3"
+  [build.environment]
+    HUGO_VERSION = "0.131.0"

@@ -1,7 +1,7 @@
 ---
 title: "Hugo Ice"
 date: 2023-05-28T00:00:00+08:00
-lastMod: 2023-07-01T00:00:00+08:00
+lastMod: 2024-08-10T00:00:00+08:00
 layout: single
 ---
 
@@ -22,4 +22,4 @@ Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题，当前处于 
 
 ## 反馈
 
-可前往 [GitHub Issue](https://github.com/MegaShow/hugo-ice/issues/new/choose) 报告问题或提出新功能建议。
+可前往 [GitHub Issue](https://github.com/megashow/hugo-ice/issues/new/choose) 报告问题或提出新功能建议。
