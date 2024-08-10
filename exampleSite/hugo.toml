@@ -49,3 +49,7 @@ copyright = "本站点所有文章除特别声明外，均采用 CC BY-NC-SA 4.0
   [params.footer]
     since = 2022 # 站点成立时间
     beian = ''   # 备案信息
+
+  # 站点分析工具
+  [params.analytics.umami]
+    id = ''

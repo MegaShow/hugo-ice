@@ -145,6 +145,11 @@
   // 段落
   p {
     line-height: 1.8;
+    margin: 0;
+  }
+
+  > p {
+    margin: 16px 0; // 只有 article 下面的段落才有间隙, 避免列表之类标签的 p 也会存在间隙
   }
 
   // 粗体
