@@ -3,7 +3,7 @@ languageCode = 'zh-CN'
 title = 'Hugo Ice'
 theme = 'hugo-ice'
 
-disableKinds = ["RSS", "sitemap"]
+disableKinds = ['rss', 'sitemap', 'taxonomy', 'term']
 hasCJKLanguage = true
 
 [markup]

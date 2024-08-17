@@ -16,3 +16,6 @@ hugo.linux
 node_modules/
 .eslintcache
 .stylelintcache
+
+# Zip files
+public.zip

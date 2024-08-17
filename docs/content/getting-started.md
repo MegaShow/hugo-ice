@@ -1,17 +1,21 @@
 ---
 title: "快速上手"
 date: 2023-05-28T00:00:00+08:00
-lastMod: 2024-08-10T00:00:00+08:00
+lastMod: 2024-08-17T00:00:00+08:00
 ---
 
 ## 前置要求
 
-> 以下所有版本均为推荐版本，低于该版本未经测试。
+在开始之前，确保你的环境已安装了 Hugo Extended 和 Dart Sass，安装方式可以查阅 [Hugo 文档](https://gohugo.io/installation/)。
+
+由于 Hugo Ice 使用了 Sass 来实现 CSS 样式，因此需要使用 Extended 版本的 Hugo，标准版本的 Hugo 将无法正常生成网站。Hugo 官方提供了两种版本的 Hugo 下载方式，安装前请确认版本是否正确。
+
+我们推荐使用以下的版本，低于该版本可能主题也能正常工作，如果遇到问题请先尝试升级版本至满足以下条件。
 
 - Hugo Extended 0.131.0 或更高版本
 - Dart SaaS 1.77.8 或更高版本
 
-如果使用 Git 或 Hugo Module 特性，你还需要
+如果使用 Git 或 Hugo Module 特性，你还需要：
 
 - Git 2.37.3 或更高版本
 - Golang 1.13 或更高版本
@@ -20,24 +24,51 @@ lastMod: 2024-08-10T00:00:00+08:00
 
 Hugo Ice 支持以下三种安装方式，推荐使用前两种方式。
 
-1. 使用 Git Submodule 安装：额外需要安装 Git；
+1. 使用 Git 安装：额外需要安装 Git；
 2. 使用 Go Module 安装：额外需要安装 Git、Golang；
 3. 手动下载安装。
 
-{{< TabGroup >}}
-{{% Tab header="使用 Git Submodule 安装" %}}
-使用 Git 命令创建一个 Submodule 并将主题下载到 `themes/hugo-ice` 文件夹下。
+### 使用 Git 安装
+
+> 该方式需要前置安装 Git。
+
+Hugo Ice 主题的源代码仓库均托管在 GitHub，通过拉取 master 分支可以得到主题的最新版本源代码。你可以通过 Git 将代码克隆下来，并放到 `themes/hugo-ice` 文件夹下。
+
+```bash
+git clone https://github.com/megashow/hugo-ice themes/hugo-ice
+```
+
+如果你的站点已经使用 Git 进行管理，也可以通过 Git Submodule 的形式下载主题。
 
 ```bash
 git submodule add https://github.com/megashow/hugo-ice themes/hugo-ice
 ```
-在 `hugo.toml` 中指定主题。
 
+然后在 hugo.toml / hugo.yaml / hugo.json 中指定主题。
+
+{{< TabGroup >}}
+{{% Tab header="toml" %}}
 ```toml
 theme = 'hugo-ice'
 ```
 {{% /Tab %}}
-{{% Tab header="使用 Go Module 安装" %}}
+{{% Tab header="yaml" %}}
+```yaml
+theme: 'hugo-ice'
+```
+{{% /Tab %}}
+{{% Tab header="json" %}}
+```json
+{
+  "theme": "hugo-ice"
+}
+```
+{{% /Tab %}}
+{{< /TabGroup >}}
+
+### 使用 Go Module 安装
+
+> 该方式需要前置安装 Git、Golang。
 
 首先，将站点文件夹声明为一个 Go Module，以下命令会创建 `go.mod` 文件。
 
@@ -45,30 +76,80 @@ theme = 'hugo-ice'
 hugo mod init github.com/<你的Github账号名>/<你的站点仓库名>
 ```
 
-Hugo 不使用 Golang 原生的 GOPROXY 配置，因此如果需要配置代理可以修改 `hugo.toml` 文件。
+Hugo 不使用 Golang 原生的 GOPROXY 配置，因此如果需要配置代理可以修改 `hugo.toml` 文件。如果不需要配置代理，可以跳过这一步骤。
 
+{{< TabGroup >}}
+{{% Tab header="toml" %}}
 ```toml
 [module]
   proxy = 'https://goproxy.cn,direct'
 ```
+{{% /Tab %}}
+{{% Tab header="yaml" %}}
+```yaml
+module:
+  proxy: 'https://goproxy.cn,direct'
+```
+{{% /Tab %}}
+{{% Tab header="json" %}}
+```json
+{
+  "module": {
+    "proxy": "https://goproxy.cn,direct"
+  }
+}
+```
+{{% /Tab %}}
+{{< /TabGroup >}}
 
-在 `hugo.toml` 中指定主题。
+在 hugo.toml / hugo.yaml / hugo.json 中指定主题。
 
+{{< TabGroup >}}
+{{% Tab header="toml" %}}
 ```toml
 theme = 'go.icytown.com/hugo-ice'
 ```
+{{% /Tab %}}
+{{% Tab header="yaml" %}}
+```yaml
+theme: 'go.icytown.com/hugo-ice'
+```
+{{% /Tab %}}
+{{% Tab header="json" %}}
+```json
+{
+  "theme": "go.icytown.com/hugo-ice"
+}
+```
+{{% /Tab %}}
+{{< /TabGroup >}}
 
 使用 `hugo mod tidy` 拉取主题内容。
 
 ```bash
 hugo mod tidy
 ```
-{{% /Tab %}}
-{{% Tab header="手动下载安装" %}}
-可直接前往 [hugo-ice](https://github.com/megashow/hugo-ice) 下载主题文件夹到本地文件夹 `themes/hugo-ice` 下，同时修改 `hugo.toml` 配置指定主题。
 
+### 手动下载安装
+
+可直接前往 [hugo-ice](https://github.com/megashow/hugo-ice) 下载主题文件夹到本地文件夹 `themes/hugo-ice` 下，同时修改 hugo.toml / hugo.yaml / hugo.json 中指定主题。
+
+{{< TabGroup >}}
+{{% Tab header="toml" %}}
 ```toml
 theme = 'hugo-ice'
+```
+{{% /Tab %}}
+{{% Tab header="yaml" %}}
+```yaml
+theme: 'hugo-ice'
+```
+{{% /Tab %}}
+{{% Tab header="json" %}}
+```json
+{
+  "theme": "hugo-ice"
+}
 ```
 {{% /Tab %}}
 {{< /TabGroup >}}
