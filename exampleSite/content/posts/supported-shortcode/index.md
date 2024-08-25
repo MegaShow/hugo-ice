@@ -14,6 +14,27 @@ Hugo 提供了丰富的 shortcode 短代码能力，本文将使用 Hugo ICE 额
 
 # 主题提供的短代码
 
+## CodeTabs
+
+{{< CodeTabs >}}
+{{< CodeTab "golang" "Golang" >}}
+func main() {
+    fmt.Println("Hello, hugo ice!")
+}
+{{< /CodeTab >}}
+{{< CodeTab lang="rust" header="Rust" >}}
+fn main() {
+    println!("Hello, hugo ice!");
+}
+{{< /CodeTab >}}
+{{< CodeTab "ruby" >}}
+puts 'Hello, hugo ice!'
+{{< /CodeTab >}}
+{{< /CodeTabs >}}
+
+{{< CodeTabs >}}
+{{< /CodeTabs >}}
+
 ## Import
 
 {{< Import "test.html" >}}

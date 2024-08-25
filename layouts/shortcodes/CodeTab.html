@@ -1,0 +1,27 @@
+{{/* 判断 CodeTab 是否在 CodeTabs 里面 */}}
+{{ if or (not .Parent) (ne .Parent.Name "CodeTabs") }}
+  {{ errorf "shortcode 'CodeTab' must be used in a 'CodeTabs' block" }}
+{{ end }}
+
+{{/* 获取参数信息 */}}
+{{ $lang := "" }}
+{{ $header := "" }}
+{{ if not .IsNamedParams }}
+  {{ $lang = .Get 0 }}
+  {{ $header = .Get 1 }}
+{{ else }}
+  {{ $lang = .Get "lang" }}
+  {{ $header = .Get "header" }}
+{{ end }}
+{{ if not $lang }}
+  {{ errorf "shortcode 'CodeTab' must specify 'lang' attr" }}
+{{ end }}
+
+{{/* 将参数写入父节点数据中 */}}
+{{ $data := dict "lang" $lang "header" $header }}
+{{ with $.Inner }}
+  {{ $data = merge $data (dict "content" ($.Inner | strings.TrimLeft "\r\n" | strings.TrimRight "\r\n" | safeHTML )) }}
+{{ end }}
+{{ with $.Parent }}
+  {{ $.Parent.Scratch.SetInMap "tabs" (printf "%d" $.Ordinal) $data }}
+{{ end }}

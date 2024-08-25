@@ -46,25 +46,19 @@ git submodule add https://github.com/megashow/hugo-ice themes/hugo-ice
 
 然后在 hugo.toml / hugo.yaml / hugo.json 中指定主题。
 
-{{< TabGroup >}}
-{{% Tab header="toml" %}}
-```toml
+{{< CodeTabs >}}
+{{< CodeTab toml >}}
 theme = 'hugo-ice'
-```
-{{% /Tab %}}
-{{% Tab header="yaml" %}}
-```yaml
+{{< /CodeTab >}}
+{{< CodeTab yaml >}}
 theme: 'hugo-ice'
-```
-{{% /Tab %}}
-{{% Tab header="json" %}}
-```json
+{{< /CodeTab >}}
+{{< CodeTab json >}}
 {
   "theme": "hugo-ice"
 }
-```
-{{% /Tab %}}
-{{< /TabGroup >}}
+{{< /CodeTab >}}
+{{< /CodeTabs >}}
 
 ### 使用 Go Module 安装
 
@@ -78,51 +72,39 @@ hugo mod init github.com/<你的Github账号名>/<你的站点仓库名>
 
 Hugo 不使用 Golang 原生的 GOPROXY 配置，因此如果需要配置代理可以修改 `hugo.toml` 文件。如果不需要配置代理，可以跳过这一步骤。
 
-{{< TabGroup >}}
-{{% Tab header="toml" %}}
-```toml
+{{< CodeTabs >}}
+{{< CodeTab toml >}}
 [module]
   proxy = 'https://goproxy.cn,direct'
-```
-{{% /Tab %}}
-{{% Tab header="yaml" %}}
-```yaml
+{{< /CodeTab >}}
+{{< CodeTab yaml >}}
 module:
   proxy: 'https://goproxy.cn,direct'
-```
-{{% /Tab %}}
-{{% Tab header="json" %}}
-```json
+{{< /CodeTab >}}
+{{< CodeTab json >}}
 {
   "module": {
     "proxy": "https://goproxy.cn,direct"
   }
 }
-```
-{{% /Tab %}}
-{{< /TabGroup >}}
+{{< /CodeTab >}}
+{{< /CodeTabs >}}
 
 在 hugo.toml / hugo.yaml / hugo.json 中指定主题。
 
-{{< TabGroup >}}
-{{% Tab header="toml" %}}
-```toml
+{{< CodeTabs >}}
+{{< CodeTab toml >}}
 theme = 'go.icytown.com/hugo-ice'
-```
-{{% /Tab %}}
-{{% Tab header="yaml" %}}
-```yaml
+{{< /CodeTab >}}
+{{< CodeTab yaml >}}
 theme: 'go.icytown.com/hugo-ice'
-```
-{{% /Tab %}}
-{{% Tab header="json" %}}
-```json
+{{< /CodeTab >}}
+{{< CodeTab json >}}
 {
   "theme": "go.icytown.com/hugo-ice"
 }
-```
-{{% /Tab %}}
-{{< /TabGroup >}}
+{{< /CodeTab >}}
+{{< /CodeTabs >}}
 
 使用 `hugo mod tidy` 拉取主题内容。
 
@@ -134,25 +116,19 @@ hugo mod tidy
 
 可直接前往 [hugo-ice](https://github.com/megashow/hugo-ice) 下载主题文件夹到本地文件夹 `themes/hugo-ice` 下，同时修改 hugo.toml / hugo.yaml / hugo.json 中指定主题。
 
-{{< TabGroup >}}
-{{% Tab header="toml" %}}
-```toml
+{{< CodeTabs >}}
+{{< CodeTab toml >}}
 theme = 'hugo-ice'
-```
-{{% /Tab %}}
-{{% Tab header="yaml" %}}
-```yaml
+{{< /CodeTab >}}
+{{< CodeTab yaml >}}
 theme: 'hugo-ice'
-```
-{{% /Tab %}}
-{{% Tab header="json" %}}
-```json
+{{< /CodeTab >}}
+{{< CodeTab json >}}
 {
   "theme": "hugo-ice"
 }
-```
-{{% /Tab %}}
-{{< /TabGroup >}}
+{{< /CodeTab >}}
+{{< /CodeTabs >}}
 
 ## 运行
 

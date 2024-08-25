@@ -1,3 +1,5 @@
+@use 'hugo:vars' as v;
+
 // 文章标题
 .article-title {
   .container-single & {
@@ -154,7 +156,7 @@
 
   // 粗体
   strong {
-    color: #555;
+    color: #222;
   }
 
   // 块引用
@@ -188,11 +190,23 @@
   }
 
   // 代码块
+  $light-style: v.$highlight-style == 'abap' or v.$highlight-style == 'algol' or v.$highlight-style == 'algol_nu' or
+    v.$highlight-style == 'arduino' or v.$highlight-style == 'autumn' or v.$highlight-style == 'borland' or
+    v.$highlight-style == 'bw' or v.$highlight-style == 'colorful' or v.$highlight-style == 'github' or
+    v.$highlight-style == 'hr_high_contrast' or v.$highlight-style == 'hrdark' or v.$highlight-style == 'igor' or
+    v.$highlight-style == 'lovelace' or v.$highlight-style == 'modus-operandi' or v.$highlight-style == 'monokailight'
+    or v.$highlight-style == 'murphy' or v.$highlight-style == 'onesenterprise' or v.$highlight-style == 'pastie' or
+    v.$highlight-style == 'pygments' or v.$highlight-style == 'rainbow_dash' or v.$highlight-style == 'tango' or
+    v.$highlight-style == 'trac' or v.$highlight-style == 'vs' or v.$highlight-style == 'xcode';
+
   pre {
-    background-color: #f0f3f3;
+    @if $light-style {
+      background-color: #f0f3f3 !important;
+    }
+
     font-size: 0.875rem;
     line-height: 1.4;
-    margin-bottom: 16px;
+    margin: 16px 0;
     overflow: auto;
     padding: 8px;
     position: relative;
@@ -211,7 +225,10 @@
     }
 
     tr > :first-child pre {
-      background-color: #c5e5f0 !important;
+      @if $light-style {
+        background-color: #dfdfdf !important;
+      }
+
       padding-right: 0;
     }
 
@@ -226,13 +243,13 @@
 
     .copy-button {
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;
       color: #727272;
       opacity: 0;
-      padding: 4px;
+      padding: 3px 4px 2px;
       position: absolute;
-      right: 8px;
-      top: 6px;
+      right: 4px;
+      top: 4px;
       transition: 0.5s;
 
       &:hover {
@@ -267,8 +284,7 @@
   }
 
   // 引用
-  /* stylelint-disable-next-line no-descending-specificity */
-  p code {
+  :not(pre) > code {
     background-color: #e0e5e5;
     font-family: var(--font-family-code);
     font-size: 14px;

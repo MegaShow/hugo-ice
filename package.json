@@ -7,8 +7,8 @@
   "scripts": {
     "build": "hugo --minify --source exampleSite --themesDir ../..",
     "build:docs": "hugo --minify --source docs --themesDir ../..",
-    "dev": "hugo serve --minify --source exampleSite --themesDir ../..",
-    "dev:docs": "hugo serve --minify --source docs --themesDir ../..",
+    "dev": "hugo serve --minify --source exampleSite --themesDir ../.. --port 8080",
+    "dev:docs": "hugo serve --minify --source docs --themesDir ../.. --port 8080",
     "ts-check": "tsc --noEmit",
     "eslint": "eslint assets/js/ --fix --cache --quiet --ext .ts",
     "stylelint": "stylelint assets/css/**/*.scss --fix --cache --quiet"
