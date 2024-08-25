@@ -1,7 +1,7 @@
 ---
 title: Markdown语法
 date: 2022-10-10T00:00:00+08:00
-lastMod: 2023-07-11T00:00:00+08:00
+lastmod: 2023-07-11T00:00:00+08:00
 tags: [Markdown]
 cover: markdown.jpg
 ---
@@ -110,6 +110,7 @@ package main
 import "fmt"
 
 func main() {
+    // 输出信息
     fmt.Println("Hello, hugo ice!")
 }
 ```
@@ -150,7 +151,9 @@ fn main() {
 
 ## 引用
 
-今天来学一下 `golang` 吧。
+今天来学一下 `Golang` 吧。
+
+- 今天来学一下 `TypeScript` 吧。
 
 ## 链接
 

@@ -82,15 +82,11 @@ export function initCodeBlock() {
     button.addEventListener('click', () => {
       const text = code?.textContent?.trim();
       if (text) {
-        navigator.clipboard
-          .writeText(text)
-          .then(() => {
-            button.blur();
-            button.innerHTML = copySuccessButton;
-            setTimeout(() => (button.innerHTML = copyButton), 2000);
-          })
-          // eslint-disable-next-line no-console
-          .catch(err => console.error(err));
+        void navigator.clipboard.writeText(text).then(() => {
+          button.blur();
+          button.innerHTML = copySuccessButton;
+          setTimeout(() => (button.innerHTML = copyButton), 2000);
+        });
       }
     });
 

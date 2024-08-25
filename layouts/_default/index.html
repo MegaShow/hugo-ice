@@ -8,12 +8,17 @@
               <a href="{{ .Permalink }}">{{ .Title }}</a>
             </h2>
             <div class="article-meta">
-              <div class="article-meta-item">
-                {{ partial "icon" "calender" }}
-                <span>发布于</span>
-                <time>{{ .Date.Format "2006-01-02" }}</time>
-              </div>
-              {{ if ne (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02") }}
+              {{ $hidePublishDate := .Site.Params.article.hidePublishDate }}
+              {{ $publishDate := .Date.Format "2006-01-02" }}
+              {{ $modifyDate := .Lastmod.Format "2006-01-02" }}
+              {{ if not $hidePublishDate }}
+                <div class="article-meta-item">
+                  {{ partial "icon" "calender" }}
+                  <span>发布于</span>
+                  <time>{{ .Date.Format "2006-01-02" }}</time>
+                </div>
+              {{ end }}
+              {{ if or $hidePublishDate (ne (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02")) }}
                 <div class="article-meta-item">
                   {{ partial "icon" "calender" }}
                   <span>更新于</span>

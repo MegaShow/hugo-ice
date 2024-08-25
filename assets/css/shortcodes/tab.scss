@@ -32,6 +32,10 @@
   > div {
     display: none;
     margin: 0 1rem;
+
+    > p {
+      margin: 16px 0;
+    }
   }
 
   > div[data-active='true'] {

@@ -3,14 +3,12 @@ languageCode = 'zh-CN'
 title = 'Hugo Ice'
 theme = 'hugo-ice'
 
-disableKinds = ["RSS", "sitemap"]
+disableKinds = ['RSS', 'sitemap', 'taxonomy', 'term']
 hasCJKLanguage = true
 
 [markup]
   [markup.highlight]
-    lineNos = true
-    style = 'manni'
-    tabWidth = 4
+    style = 'vs'
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 6
@@ -23,7 +21,7 @@ hasCJKLanguage = true
     weight = 1
   [[menu.header]]
     name = '快速上手'
-    url = '/getting-started/'
+    url = '/getting-started'
     weight = 2
   [[menu.header]]
     name = 'GitHub'
@@ -34,6 +32,10 @@ hasCJKLanguage = true
   mainSections = ['posts']
   [params.author]
     name = 'MegaShow'
+  [params.article]
+    hidePublishDate = true
   [params.footer]
     since = 2016
     beian = '粤ICP备17101777号-1'
+  [params.highlight]
+    style = 'vs'

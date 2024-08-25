@@ -16,7 +16,8 @@
   {{ end -}}
 
   {{/* 导入主题 CSS */}}
-  {{ $opts := dict "transpiler" "dartsass" }}
+  {{ $vars := dict "highlight-style" (default "-" .Site.Params.highlight.style) }}
+  {{ $opts := dict "transpiler" "dartsass" "vars" $vars }}
   {{ $style := resources.Get "css/main.scss" | resources.ToCSS $opts | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 

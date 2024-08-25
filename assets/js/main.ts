@@ -1,6 +1,7 @@
 import { onLoad } from './event';
 import { initCatalog, initCodeBlock } from './partials/article';
 import { initHeaderMenuToggle } from './partials/header';
+import { initCodeTab } from './shortcodes/code-tab';
 import { initTab } from './shortcodes/tab';
 
 /** 初始化流程 */
@@ -13,6 +14,7 @@ function init() {
   onLoad(initCodeBlock);
 
   // 短代码
+  onLoad(initCodeTab);
   onLoad(initTab);
 }
 
