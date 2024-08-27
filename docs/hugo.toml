@@ -29,7 +29,6 @@ hasCJKLanguage = true
     weight = 100
 
 [params]
-  mainSections = ['posts']
   [params.author]
     name = 'MegaShow'
   [params.article]

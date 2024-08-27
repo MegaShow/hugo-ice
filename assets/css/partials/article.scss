@@ -1,5 +1,12 @@
 @use 'hugo:vars' as v;
 
+// 文章头部
+.article-header {
+  .container-single & {
+    margin-bottom: 48px;
+  }
+}
+
 // 文章标题
 .article-title {
   .container-single & {

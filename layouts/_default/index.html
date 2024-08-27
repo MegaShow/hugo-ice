@@ -1,7 +1,7 @@
 {{ define "main" }}
   <main class="container container-list">
     <section class="main-section">
-      {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+      {{ range where .Site.RegularPages "Type" "in" .Site.MainSections }}
         <article class="article-wrapper">
           <div class="article-header">
             <h2 class="article-title">

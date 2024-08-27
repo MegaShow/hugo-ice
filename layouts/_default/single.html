@@ -67,7 +67,7 @@
       {{/* 前后文章跳转链接 */}}
       {{ if $pageInMainSection }}
         <div class="article-footer">
-          {{ $mainPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+          {{ $mainPages := where .Site.RegularPages "Type" "in" .Site.MainSections }}
           <div>
             {{ with $mainPages.Prev . }}
               <a class="article-footer-link" href="{{ .RelPermalink }}">

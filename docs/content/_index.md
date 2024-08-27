@@ -1,7 +1,7 @@
 ---
 title: "Hugo Ice"
 date: 2023-05-28T00:00:00+08:00
-lastMod: 2024-08-10T00:00:00+08:00
+lastmod: 2024-08-28T00:00:00+08:00
 layout: single
 ---
 
