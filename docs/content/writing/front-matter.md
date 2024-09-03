@@ -1,7 +1,7 @@
 ---
 title: "文章配置"
 date: 2023-07-01T00:00:00+08:00
-lastmod: 2024-08-28T00:00:00+08:00
+lastmod: 2024-09-04T00:00:00+08:00
 ---
 
 文章 Front Matter 用于记录文章一些基本信息和配置，通常以 YAML 的形式记录在文章开头。
@@ -36,3 +36,5 @@ Hugo Ice 通过 Front Matter 提供了更丰富的文章配置能力扩展。
 | 字段 | 类型 | 默认值 | 描述 | 示例 |
 |--|--|--|--|--|
 | cover | string | - | 文章封面图, 建议配置相对路径, 在捆绑包下寻找 | post-cover.svg |
+| hideHeader | bool | false | 隐藏文章头部, 包括标题、封面图、时间、标签等信息 | true |
+| hideTableOfContents | bool | false | 隐藏目录 | true |

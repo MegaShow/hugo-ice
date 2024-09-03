@@ -7,12 +7,15 @@ disableKinds = ['RSS', 'sitemap', 'taxonomy', 'term']
 hasCJKLanguage = true
 
 [markup]
-  [markup.highlight]
-    style = 'vs'
-  [markup.tableOfContents]
-    startLevel = 2
-    endLevel = 6
-    ordered = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+[markup.highlight]
+  style = 'vs'
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 6
+  ordered = false
 
 [menu]
   [[menu.header]]

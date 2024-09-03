@@ -3,7 +3,11 @@ title: "Hugo Ice"
 date: 2023-05-28T00:00:00+08:00
 lastmod: 2024-08-28T00:00:00+08:00
 layout: single
+hideHeader: true
+hideTableOfContents: true
 ---
+
+<h1 style="text-align:center">Hugo Ice</h1>
 
 你好，欢迎使用 Hugo Ice。
 

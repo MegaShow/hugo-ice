@@ -31,6 +31,17 @@
                 <span>&</span>
                 <span>{{ .ReadingTime }}分钟</span>
               </div>
+              {{/* 标签 */}}
+              {{ with .GetTerms "tags" }}
+                <div class="article-meta-item article-tags">
+                  {{ range . }}
+                    <a class="article-tag" href="{{ .RelPermalink }}">
+                      {{ partial "icon" "tag" }}
+                      <span>{{ .LinkTitle }}</span>
+                    </a>
+                  {{ end }}
+                </div>
+              {{ end }}
             </div>
           </div>
           <div class="article article-summary">
