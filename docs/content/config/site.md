@@ -1,7 +1,7 @@
 ---
 title: "主题配置"
 date: 2023-07-01T00:00:00+08:00
-lastmod: 2024-08-28T00:00:00+08:00
+lastmod: 2024-09-07T00:00:00+08:00
 ---
 
 Hugo Ice 在 Hugo 基础配置外，额外支持了一些特有功能的配置。本文仅介绍部分 Hugo 基础配置，其他配置可前往 Hugo 官网查阅。
@@ -209,6 +209,35 @@ params:
   "params": {
     "footer": {
       "beian": "粤ICP备xxxxxxxx号-x"
+    }
+  }
+}
+{{< /CodeTab >}}
+{{< /CodeTabs >}}
+
+### 扩展信息
+
+允许在页尾顶部和底部添加额外的文本描述，通过 prefix 和 suffix 声明插入的文本。
+
+{{< CodeTabs >}}
+{{< CodeTab "toml" >}}
+[params]
+  [params.footer]
+    prefix = '这是页尾顶部文本'
+    suffix = '这是页尾底部文本'
+{{< /CodeTab >}}
+{{< CodeTab "yaml" >}}
+params:
+  footer:
+    prefix: '这是页尾顶部文本'
+    suffix: '这是页尾底部文本'
+{{< /CodeTab >}}
+{{< CodeTab "json" >}}
+{
+  "params": {
+    "footer": {
+      "prefix": "这是页尾顶部文本",
+      "suffix": "这是页尾底部文本"
     }
   }
 }

@@ -41,14 +41,16 @@ puts 'Hello, hugo ice!'
 
 ## Tab
 
-{{< TabGroup >}}
+{{< Tabs >}}
 {{% Tab header="第一个Tab" %}}
 这是第一个 Tab 的内容。
 {{% /Tab %}}
 {{% Tab "第二个Tab" %}}
 这是第二个 Tab 的内容。
 {{% /Tab %}}
-{{% Tab /%}}
 {{% Tab %}}
 {{% /Tab %}}
-{{< /TabGroup >}}
+{{< /Tabs >}}
+
+{{< Tabs >}}
+{{< /Tabs >}}

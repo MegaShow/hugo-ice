@@ -1,0 +1,31 @@
+<div class="ice-tabs">
+  {{/* 标记 Tabs 需要闭合标签 */}}
+  {{ .Inner }}
+  {{ $tabs := $.Scratch.Get "tabs" }}
+
+  {{/* Tabs 头部 */}}
+  <ul class="ice-tabs-header">
+    {{ with $tabs }}
+      {{ range $idx, $tab := $.Scratch.Get "tabs" }}
+        <li data-index="{{ $idx }}" {{ if eq $idx "0" }}data-active="true"{{ end }}>
+          {{ .header }}
+        </li>
+      {{ end }}
+    {{ else }}
+      <p>Empty Tabs</p>
+    {{ end }}
+  </ul>
+
+  {{/* Tabs 内容 */}}
+  <div class="ice-tabs-content">
+    {{ range $idx, $tab := $.Scratch.Get "tabs" }}
+      <div data-index="{{ $idx }}" {{ if eq $idx "0" }}data-active="true"{{ end }}>
+        {{ with .content }}
+          {{ . }}
+        {{ else }}
+          <p style="color:gray">Empty Tab</p>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</div>

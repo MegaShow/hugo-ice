@@ -1,4 +1,7 @@
 <footer class="footer">
+  {{ if .Site.Params.footer.prefix }}
+    <div>{{ .Site.Params.footer.prefix }}</div>
+  {{ end }}
   <div>
     {{/* 如果起始年份与当前年份相同或起始年份未设置，则只展示当前年份 */}}
     {{ $lastmod := .Site.Lastmod }}
@@ -17,4 +20,7 @@
       <a href="https://beian.miit.gov.cn/" target="_blank">{{ .Site.Params.footer.beian }}</a>
     {{ end }}
   </div>
+  {{ if .Site.Params.footer.suffix }}
+    <div>{{ .Site.Params.footer.suffix }}</div>
+  {{ end }}
 </footer>

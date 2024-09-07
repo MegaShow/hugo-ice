@@ -1,6 +1,6 @@
-{{/* 判断 Tab 是否在 TabGroup 里面 */}}
-{{ if or (not .Parent) (ne .Parent.Name "TabGroup") }}
-  {{ errorf "shortcode 'Tab' must be used in a 'TabGroup' block" }}
+{{/* 判断 Tab 是否在 Tabs 里面 */}}
+{{ if or (not .Parent) (ne .Parent.Name "Tabs") }}
+  {{ errorf "shortcode 'Tab' must be used in a 'Tabs' block" }}
 {{ end }}
 
 {{/* 获取参数信息 */}}

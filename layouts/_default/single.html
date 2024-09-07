@@ -68,23 +68,25 @@
 
       {{/* 前后文章跳转链接 */}}
       {{ if $pageInMainSection }}
-        <div class="article-footer">
-          {{ $mainPages := where .Site.RegularPages "Type" "in" .Site.MainSections }}
-          <div>
-            {{ with $mainPages.Prev . }}
-              <a class="article-footer-link" href="{{ .RelPermalink }}">
-                {{ partial "icon" "left" }}{{ .Title }}
-              </a>
-            {{ end }}
+        {{ $mainPages := where .Site.RegularPages "Type" "in" .Site.MainSections }}
+        {{ if or ($mainPages.Prev . ) ($mainPages.Next .) }}
+          <div class="article-footer">
+            <div>
+              {{ with $mainPages.Prev . }}
+                <a class="article-footer-link" href="{{ .RelPermalink }}">
+                  {{ partial "icon" "left" }}{{ .Title }}
+                </a>
+              {{ end }}
+            </div>
+            <div>
+              {{ with $mainPages.Next . }}
+                <a class="article-footer-link" href="{{ .RelPermalink }}">
+                  {{ .Title }}{{ partial "icon" "right" }}
+                </a>
+              {{ end }}
+            </div>
           </div>
-          <div>
-            {{ with $mainPages.Next . }}
-              <a class="article-footer-link" href="{{ .RelPermalink }}">
-                {{ .Title }}{{ partial "icon" "right" }}
-              </a>
-            {{ end }}
-          </div>
-        </div>
+        {{ end }}
       {{ end }}
     </section>
 

@@ -1,13 +1,12 @@
-// Tab 组
-.ice-tab-group {
+// Tabs 组
+.ice-tabs {
   background-color: #f8f8f8;
-  border: 1px solid #c8c8c8;
-  border-radius: 0.25rem;
+  border: 1px solid #e2e2e2;
   margin: 1rem 0;
 }
 
-// Tab标题
-.ice-tab-header {
+// Tabs 标题
+.ice-tabs-header {
   border-bottom: solid 1px #ccc;
   display: flex;
   flex-wrap: wrap;
@@ -15,23 +14,32 @@
   padding-left: 0 !important;
 
   li {
-    border-right: 1px solid #c8c8c8;
-    border-bottom: 1px solid #c8c8c8;
     cursor: pointer;
     list-style: none;
-    padding: 5px 10px;
+    padding: 3px 16px;
+  }
+
+  li:hover {
+    color: #007acc;
   }
 
   li[data-active='true'] {
-    background-color: #bfdce3;
+    border-bottom: 3px solid #007acc;
+    font-weight: bold;
+  }
+
+  p {
+    color: gray;
+    list-style: none;
+    padding: 5px 16px;
   }
 }
 
-// Tab内容
-.ice-tab-content {
+// Tabs 内容
+.ice-tabs-content {
   > div {
     display: none;
-    margin: 0 1rem;
+    margin: 16px;
 
     > p {
       margin: 16px 0;

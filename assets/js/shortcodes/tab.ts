@@ -1,9 +1,9 @@
 export function initTab() {
   // 给每一个 TabGroup 中的 Tab 添加点击事件
-  const groups = document.querySelectorAll<HTMLDivElement>('.ice-tab-group');
+  const groups = document.querySelectorAll<HTMLDivElement>('.ice-tabs');
   groups.forEach(group => {
-    const tabs = group.querySelectorAll<HTMLLIElement>('.ice-tab-header > li');
-    const contents = group.querySelectorAll<HTMLDivElement>('.ice-tab-content > div');
+    const tabs = group.querySelectorAll<HTMLLIElement>('.ice-tabs-header > li');
+    const contents = group.querySelectorAll<HTMLDivElement>('.ice-tabs-content > div');
 
     const onClick = function (this: HTMLLIElement) {
       const idx = this.dataset.index;
