@@ -9,9 +9,11 @@ hideTableOfContents: true
 
 <h1 style="text-align:center">Hugo Ice</h1>
 
+![hugo-ice](favicon.svg)
+
 你好，欢迎使用 Hugo Ice。
 
-Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题，当前处于 Beta 测试阶段，具备以下特点：
+Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题，具备以下特点：
 
 - 原生 CSS 和 JavaScript，不依赖相关第三方框架
 - 默认适配 PC 和 Mobile 两类设备

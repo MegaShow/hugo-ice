@@ -1,7 +1,7 @@
 ---
 title: "页面配置"
 date: 2023-07-02T00:00:00+08:00
-lastmod: 2024-08-28T00:00:00+08:00
+lastmod: 2024-09-15T00:00:00+08:00
 ---
 
 Hugo 提供了一些布局用于创建不同类型的页面，通过 Markdown 文件 FrontMatter 的 layout 字段来指定该页面的渲染布局。
@@ -24,7 +24,7 @@ title: 归档
 layout: archives
 ```
 
-## 空白页
+## 空白页 (blank)
 
 Hugo Ice 提供了空白布局 blank，可以配合使用 Import 短代码导入外部文件的 HTML。
 

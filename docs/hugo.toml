@@ -32,6 +32,7 @@ hasCJKLanguage = true
     weight = 100
 
 [params]
+  favicon = 'favicon.svg'
   [params.author]
     name = 'MegaShow'
   [params.article]
@@ -39,6 +40,5 @@ hasCJKLanguage = true
   [params.footer]
     since = 2016
     beian = '粤ICP备17101777号-1'
-    suffix = 'Powered by IceCloud'
   [params.highlight]
     style = 'vs'

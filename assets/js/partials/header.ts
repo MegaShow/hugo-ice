@@ -20,8 +20,8 @@ function showOrHideHeaderMenu() {
   }
 }
 
-/** 初始化头部菜单按钮 */
-export function initHeaderMenuToggle() {
+/** 初始化头部 */
+export function initHeader() {
   // 为头部导航菜单按钮添加切入切出效果
   document.querySelector('.header-menu-toggle')?.addEventListener('click', showOrHideHeaderMenu);
 }

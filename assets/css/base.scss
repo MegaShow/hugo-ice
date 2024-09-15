@@ -12,6 +12,12 @@
   }
 }
 
+@mixin screen-sm-md {
+  @media screen and (min-width: #{v.$screen-sm-min}) and (max-width: #{v.$screen-md-max}) {
+    @content;
+  }
+}
+
 body {
   margin: 0;
 }

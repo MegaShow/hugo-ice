@@ -334,9 +334,10 @@
 
       /* stylelint-disable-next-line no-descending-specificity */
       a {
+        border-bottom: 1px solid #7d7d7d;
         color: black;
         text-decoration: none;
-        border-bottom: 1px solid #7d7d7d;
+        word-break: break-all;
 
         &:hover {
           color: #0056b3;
@@ -379,51 +380,6 @@
 
       svg {
         fill: #0056b3;
-      }
-    }
-  }
-}
-
-// 目录
-.sidebar {
-  .catalog {
-    border-left: 1px solid #e7e7e7;
-    font-size: 1rem;
-
-    .catalog-title {
-      font-weight: bold;
-      padding-left: 16px;
-    }
-
-    nav {
-      margin: 8px 0;
-    }
-
-    ul {
-      line-height: 1.5rem;
-      list-style-type: none;
-      margin: 0;
-      padding-left: 16px;
-
-      a.active::before {
-        background-color: #007bff;
-        content: '';
-        height: 16px;
-        left: 40px;
-        margin-top: 4px;
-        position: absolute;
-        width: 4px;
-      }
-
-      /* stylelint-disable-next-line no-descending-specificity */
-      a {
-        color: #393f46;
-        text-decoration: none;
-
-        &:hover,
-        &.active {
-          color: #007bff;
-        }
       }
     }
   }

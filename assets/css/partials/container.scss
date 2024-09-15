@@ -23,22 +23,6 @@
     max-width: v.$screen-sm-max;
     width: 100%;
   }
-
-  // 侧栏
-  .sidebar {
-    padding-left: 40px;
-    position: sticky;
-    top: 20px;
-    width: 260px;
-
-    @include screen-md {
-      display: none;
-    }
-
-    @include screen-sm {
-      display: none;
-    }
-  }
 }
 
 // 文章模块

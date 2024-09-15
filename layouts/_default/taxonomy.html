@@ -16,14 +16,19 @@
     {{ else }}
       <section class="term">
         <h1 class="term-title r-background-color-before" data-rand="0">{{ .Title }}</h1>
-        <ul class="term-article-list">
-          {{ range .Pages }}
-            <li>
-              <span class="term-article-time">{{ .PublishDate.Format "01-02" }}</span>
-              <a class="term-link" href="{{ .Permalink }}">{{ .Title }}</a>
-            </li>
-          {{ end }}
-        </ul>
+        {{ range $idx, $group := .Pages.GroupByDate "2006" }}
+          <h2 class="term-subtitle r-background-color-before" data-rand="{{ add (mod $idx 4) 1 }}">
+            {{ $group.Key }}
+          </h2>
+          <ul class="term-article-list">
+            {{ range $group.Pages }}
+              <li>
+                <span class="term-article-time">{{ .PublishDate.Format "01-02" }}</span>
+                <a class="term-link" href="{{ .Permalink }}">{{ .Title }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
       </section>
     {{ end }}
   </main>

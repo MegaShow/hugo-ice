@@ -90,14 +90,6 @@
       {{ end }}
     </section>
 
-    {{ $hasToc := ge (len .TableOfContents) 100 }}
-    {{ if and $hasToc (not .Params.hideTableOfContents) }}
-      <aside class="sidebar">
-        <section class="catalog">
-          <label class="catalog-title">目录</label>
-          {{ .TableOfContents }}
-        </section>
-      </aside>
-    {{ end }}
+    {{ partial "sidebar" . }}
   </main>
 {{ end }}
