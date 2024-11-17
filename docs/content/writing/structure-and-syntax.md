@@ -68,3 +68,15 @@ Markdown 支持嵌入链接。
 <!-- 地址: https://docs.icytown.com/hugo-ice/writing/front-matter/ -->
 [文章配置]({{</* ref "/writing/front-matter" */>}})
 ```
+
+### 概要
+
+在 Hugo Ice 的特定场景下 (比如首页) 仅展示文章的概要，并不会展示全文内容。Hugo 默认按字数进行概要截断，但是推荐通过注释标识标明截断位置。
+
+```markdown
+这是一个概要。
+
+<!--more-->
+
+这是剩下全文内容。
+```
