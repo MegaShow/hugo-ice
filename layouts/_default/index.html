@@ -47,11 +47,6 @@
           <div class="article article-summary">
             {{ .Summary }}
           </div>
-          {{ if .Truncated }}
-            <div class="article-read-more">
-              <a class="article-read-more-link" href="{{ .RelPermalink }}">阅读全文</a>
-            </div>
-          {{ end }}
         </article>
       {{ end }}
     </section>
