@@ -1,22 +1,29 @@
-module.exports = {
-  root: true,
-  env: { browser: true, es2022: true },
+import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config({
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:@typescript-eslint/stylistic-type-checked',
-    'prettier',
+    js.configs.recommended,
+    tseslint.configs.recommendedTypeChecked,
+    tseslint.configs.stylisticTypeChecked,
+    prettier,
   ],
-  ignorePatterns: ['.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
+  files: ['**/*.{ts,tsx}'],
+  languageOptions: {
     ecmaVersion: 'latest',
-    project: ['./tsconfig.json'],
     sourceType: 'module',
-    tsconfigRootDir: __dirname,
+    globals: globals.browser,
+    parserOptions: {
+      projectService: true,
+      tsconfigRootDir: import.meta.dirname,
+    },
   },
-  plugins: ['import'],
+  plugins: {
+    import: importPlugin,
+  },
   rules: {
     'array-callback-return': ['error', { checkForEach: true }],
     'no-await-in-loop': 'error',
@@ -45,6 +52,7 @@ module.exports = {
         alphabetize: { order: 'asc', orderImportKind: 'asc' },
       },
     ],
+
     '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
   },
-};
+});
