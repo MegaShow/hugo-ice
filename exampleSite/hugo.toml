@@ -45,8 +45,13 @@ copyright = "本站点所有文章除特别声明外，均采用 CC BY-NC-SA 4.0
   [params.author]
     name = 'MegaShow' # 作者昵称
 
+  # 文章
   [params.article]
     hidePublishDate = false # 隐藏发布时间, 如果只存在发布时间则将发布时间视为最近更新时间
+    [params.article.outdatedTips]
+      allEnabled = false                       # 所有文章默认启用过时提示
+      minDays = 365                            # 距离当前多少天算过时
+      text = "上次更新于 {{ days }} 天前，部分内容可能已经过时。" # 过时文案
 
   # 页脚
   [params.footer]

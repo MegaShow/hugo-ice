@@ -49,6 +49,17 @@
         </div>
       {{ end }}
 
+      {{/* 过时提示 */}}
+      {{ if or (and .Site.Params.article.outdatedTips.allEnabled (ne .Params.outdatedTips false)) .Params.outdatedTips }}
+        <div
+          class="article-outdated-tips"
+          data-lastmod="{{ .Lastmod.Format "2006-01-02" }}"
+          data-min="{{ .Site.Params.article.outdatedTips.minDays }}"
+        >
+          <p>{{ or .Site.Params.article.outdatedTips.text "上次更新于 {{ days }} 天前，部分内容可能已经过时。" }}</p>
+        </div>
+      {{ end }}
+
       {{/* 文章正文 */}}
       <article class="article">
         {{/* 通过正则给标题添加上锚点 */}}

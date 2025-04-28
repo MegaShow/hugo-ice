@@ -93,3 +93,25 @@ export function initCodeBlock() {
     codeBlock.appendChild(button);
   });
 }
+
+/** 初始化过时提示 */
+export function initOutdatedTips() {
+  const tips = document.querySelector<HTMLDivElement>('.article-outdated-tips');
+  if (!tips?.dataset.lastmod || !tips.dataset.min) {
+    return;
+  }
+  const currentDays = Math.floor((new Date().getTime() - Date.parse(tips.dataset.lastmod)) / 1000 / 86400);
+  const minDays = parseInt(tips.dataset.min);
+  if (Number.isNaN(currentDays) || Number.isNaN(minDays)) {
+    return;
+  }
+  if (currentDays < minDays) {
+    return;
+  }
+
+  const text = tips.querySelector<HTMLElement>('p');
+  if (text) {
+    text.innerText = text.innerText.replaceAll('{{ days }}', String(currentDays));
+    tips.classList.add('article-outdated-tips-show');
+  }
+}

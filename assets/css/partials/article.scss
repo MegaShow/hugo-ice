@@ -100,6 +100,24 @@
   margin: 1rem 0;
 }
 
+// 文章过期提示
+.article-outdated-tips {
+  background-color: #ffeebe;
+  border: 1px solid #ffe9ba;
+  border-left-color: #ffb153;
+  border-left-width: 5px;
+  display: none;
+  padding: 8px 16px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.article-outdated-tips-show {
+  display: block;
+}
+
 // 正文内容
 .article {
   font-size: 1rem;

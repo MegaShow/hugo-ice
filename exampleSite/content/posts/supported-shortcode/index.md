@@ -2,6 +2,7 @@
 title: '支持的短代码'
 date: '2023-02-23T00:00:00+08:00'
 tags: [Hugo, Markdown, 测试]
+outdatedTips: true
 ---
 
 Hugo 提供了丰富的 shortcode 短代码能力，本文将使用 Hugo ICE 额外提供 shortcode，用于验证 shortcode 的渲染和使用是否正常。

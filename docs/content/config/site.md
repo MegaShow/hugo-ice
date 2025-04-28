@@ -334,3 +334,41 @@ params:
 }
 {{< /CodeTab >}}
 {{< /CodeTabs >}}
+
+### 过时提示
+
+Hugo 支持为满足特定条件的文章头部添加上过时提示信息。通过 params.article.outdatedTips 可以为所有文章开启该功能，当文章的更新时间早于当前时间 x 天后，将展示提示。
+
+{{< CodeTabs >}}
+{{< CodeTab "toml" >}}
+[params]
+  [params.article]
+    [params.article.outdatedTips]
+      allEnabled = true
+      minDays = 365
+      text = "本文更新于 {{ days }} 天前，内容可能已经过时。"
+{{< /CodeTab >}}
+{{< CodeTab "yaml" >}}
+params:
+  article:
+    outdatedTips:
+      allEnabled: true
+      minDays: 365
+      text: "本文更新于 {{ days }} 天前，内容可能已经过时。"
+{{< /CodeTab >}}
+{{< CodeTab "json" >}}
+{
+  "params": {
+    "article": {
+      "outdatedTips": {
+        "allEnabled": true,
+        "minDays": 365,
+        "text": "本文更新于 {{ days }} 天前，内容可能已经过时。"
+      }
+    }
+  }
+}
+{{< /CodeTab >}}
+{{< /CodeTabs >}}
+
+如果需要对特定文章开启或关闭该功能，可以通过文章的 Front Matter 进行配置，具体见 [扩展信息]({{< relref "/writing/front-matter#扩展信息" >}})。
