@@ -26,10 +26,8 @@
                 </div>
               {{ end }}
               <div class="article-meta-item">
-                {{ partial "icon" "time" }}
+                {{ partial "icon" "word" }}
                 <span>{{ .WordCount }}字</span>
-                <span>&</span>
-                <span>{{ .ReadingTime }}分钟</span>
               </div>
               {{/* 标签 */}}
               {{ with .GetTerms "tags" }}
