@@ -26,6 +26,8 @@ jobs:
         run: '[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true'
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
@@ -43,6 +45,8 @@ jobs:
         run: '[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true'
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - name: TypeScript Check
         run: pnpm run ts-check
       - name: Lint with ESLint
