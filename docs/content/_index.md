@@ -1,7 +1,7 @@
 ---
 title: "Hugo Ice"
 date: 2023-05-28T00:00:00+08:00
-lastmod: 2024-08-28T00:00:00+08:00
+lastmod: 2025-12-19T00:00:00+08:00
 layout: single
 hideHeader: true
 hideTableOfContents: true
@@ -31,7 +31,7 @@ Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题，具备以下�
 - **主题配置**
   - [站点配置]({{< relref "/config/site" >}})
   - [页面布局]({{< relref "/config/page-layout" >}})
-  - [统计分析]({{< relref "/config/web-analytics" >}})
+  - [统计分析]({{< relref "/config/web-statistics" >}})
 
 ## 示例站点
 

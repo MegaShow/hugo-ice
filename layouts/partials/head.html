@@ -22,7 +22,8 @@
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
   {{/* 导入主题 JavaScript */}}
-  {{ $js := resources.Get "js/main.ts" | js.Build | resources.Minify | resources.Fingerprint }}
+  {{ $opts := dict "params" (dict "statistics" .Site.Params.statistics) }}
+  {{ $js := resources.Get "js/main.ts" | js.Build $opts | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ $js.RelPermalink }}"></script>
 
   {{/* 站点分析工具 */}}

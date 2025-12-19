@@ -1,17 +1,21 @@
 import js from '@eslint/js';
+import { defineConfig } from 'eslint/config';
 import prettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config({
+export default defineConfig({
   extends: [
     js.configs.recommended,
     tseslint.configs.recommendedTypeChecked,
     tseslint.configs.stylisticTypeChecked,
+    importPlugin.flatConfigs.recommended,
+    importPlugin.flatConfigs.typescript,
     prettier,
   ],
   files: ['**/*.{ts,tsx}'],
+  ignores: ['dist'],
   languageOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -20,9 +24,6 @@ export default tseslint.config({
       projectService: true,
       tsconfigRootDir: import.meta.dirname,
     },
-  },
-  plugins: {
-    import: importPlugin,
   },
   rules: {
     'array-callback-return': ['error', { checkForEach: true }],
@@ -44,6 +45,7 @@ export default tseslint.config({
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
 
     'import/newline-after-import': 'error',
+    'import/no-unresolved': ['error', { ignore: ['@params'] }],
     'import/order': [
       'error',
       {
@@ -54,5 +56,11 @@ export default tseslint.config({
     ],
 
     '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
+  },
+  settings: {
+    'import/resolver': {
+      typescript: true,
+      node: true,
+    },
   },
 });

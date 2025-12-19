@@ -1,7 +1,15 @@
+import params from '@params';
+
+import { CounterService } from '../api/counter';
 import { iconCopyHTML, iconCopySuccessHTML } from '../resources/icon';
 
 const copyButton = iconCopyHTML({ fill: 'currentColor', height: 20, width: 20 });
 const copySuccessButton = iconCopySuccessHTML({ fill: '#2aa766', height: 20, width: 20 });
+
+const counterService = new CounterService(
+  params.statistics?.counter?.apipath ?? '',
+  params.statistics?.counter?.tenantid ?? '',
+);
 
 interface CatalogItem {
   hash: string;
@@ -92,6 +100,34 @@ export function initCodeBlock() {
 
     codeBlock.appendChild(button);
   });
+}
+
+/** 初始化文章阅读量 */
+export async function initCounter() {
+  const counter = document.querySelector<HTMLDivElement>('.article-counter');
+  const text = counter?.querySelector<HTMLSpanElement>('span');
+  if (!counter || !text) {
+    return;
+  }
+  if (!params.statistics?.counter?.apipath || !params.statistics?.counter?.tenantid) {
+    return;
+  }
+
+  const objectId = window.location.pathname;
+  const count = await counterService.getCounter(objectId);
+  if (count > 0) {
+    text.innerText = text.innerText.replaceAll('{{ count }}', String(count));
+    counter.classList.add('article-counter-show');
+  }
+  // 上报增加阅读量
+  const incr = async () => {
+    await counterService.incrCounter(objectId, params.statistics?.counter?.upsert);
+  };
+  if ((params.statistics?.counter?.delayincr ?? 0) > 0) {
+    setTimeout(incr, params.statistics?.counter?.delayincr);
+  } else {
+    await incr();
+  }
 }
 
 /** 初始化过时提示 */

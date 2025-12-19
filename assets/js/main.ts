@@ -1,5 +1,5 @@
 import { onLoad } from './event';
-import { initCatalog, initCodeBlock, initOutdatedTips } from './partials/article';
+import { initCatalog, initCodeBlock, initCounter, initOutdatedTips } from './partials/article';
 import { initHeader } from './partials/header';
 import { initSidebar } from './partials/sidebar';
 import { initCodeTab } from './shortcodes/code-tab';
@@ -14,6 +14,7 @@ function init() {
   // 文章内容
   onLoad(initCatalog);
   onLoad(initCodeBlock);
+  onLoad(initCounter);
   onLoad(initOutdatedTips);
 
   // 短代码

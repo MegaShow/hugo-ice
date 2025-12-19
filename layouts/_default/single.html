@@ -15,23 +15,29 @@
             {{ $publishDate := .Date.Format "2006-01-02" }}
             {{ $modifyDate := .Lastmod.Format "2006-01-02" }}
             {{ if not $hidePublishDate }}
-              <div class="article-meta-item">
+              <div class="article-meta-item" title="发布时间">
                 {{ partial "icon" "calender" }}
                 <span>发布于</span>
                 <time>{{ .Date.Format "2006-01-02" }}</time>
               </div>
             {{ end }}
             {{ if or $hidePublishDate (ne (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02")) }}
-              <div class="article-meta-item">
+              <div class="article-meta-item" title="更新时间">
                 {{ partial "icon" "calender" }}
                 <span>更新于</span>
                 <time>{{ .Lastmod.Format "2006-01-02" }}</time>
               </div>
             {{ end }}
-            <div class="article-meta-item">
+            <div class="article-meta-item" title="字数">
               {{ partial "icon" "word" }}
               <span>{{ .WordCount }}字</span>
             </div>
+            {{ if and .Site.Params.statistics.counter.apiPath .Site.Params.statistics.counter.tenantId }}
+              <div class="article-meta-item article-counter" title="阅读量">
+                {{ partial "icon" "view" }}
+                <span>{{ "{{ count }}" }}次</span>
+              </div>
+            {{ end }}
             {{/* 标签 */}}
             {{ with .GetTerms "tags" }}
               <div class="article-meta-item article-tags">

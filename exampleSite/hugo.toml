@@ -3,7 +3,7 @@ languageCode = 'zh-cn'
 title = 'Hugo Ice Demo Site'
 theme = 'hugo-ice'
 
-disableKinds = ["RSS", "sitemap"]
+disableKinds = ["rss", "sitemap"]
 hasCJKLanguage = true
 copyright = "本站点所有文章除特别声明外，均采用 CC BY-NC-SA 4.0 许可协议，转载请注明出处！"
 
@@ -65,3 +65,10 @@ copyright = "本站点所有文章除特别声明外，均采用 CC BY-NC-SA 4.0
   # 站点分析工具
   [params.analytics.umami]
     id = ''
+
+  # 统计工具
+  [params.statistics.counter]
+    apiPath = 'https://api.icytown.com/counter'       # counter 接口路径
+    tenantId = '4cdb0d9d-fb6b-40ec-aecc-14e33c234f74' # 应用 id
+    upsert = false                                    # 是否自动创建资源
+    delayIncr = 5000                                  # 增加阅读量延迟时间, 单位毫秒

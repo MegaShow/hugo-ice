@@ -120,6 +120,15 @@
   display: block;
 }
 
+// 文章阅读量
+.article-counter {
+  display: none !important;
+}
+
+.article-counter-show {
+  display: flex !important;
+}
+
 // 正文内容
 .article {
   font-size: 1rem;
@@ -300,15 +309,21 @@
   table {
     border-collapse: collapse;
     border-spacing: 0;
+    box-shadow: 0 1px 3px #0000000d;
     margin-bottom: 1.5rem;
     width: 100%;
   }
 
+  thead {
+    background-color: #f7f7f7;
+  }
+
   td,
   th {
-    border: 1px solid #cacaca;
+    border: 1px solid #e9e9e9;
     padding: 6px 12px;
     text-align: left;
+    vertical-align: top;
   }
 
   th {
