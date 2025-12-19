@@ -47,6 +47,8 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 10
+      - name: Install Packages
+        run: pnpm install
       - name: TypeScript Check
         run: pnpm run ts-check
       - name: Lint with ESLint
