@@ -17,13 +17,13 @@ Hugo Ice (冰块) 是由 MegaShow 为冰镇设计的站点主题。
 
 我们推荐使用以下的版本
 
-- Hugo Extended 0.131.0 或更高版本
-- Dart SaaS 1.77.8 或更高版本
+- [Hugo Extended](http://github.com/gohugoio/hugo/): 0.164.0 或更高版本
+- [Dart SaaS](https://github.com/sass/dart-sass): 1.102.0 或更高版本
 
 如果使用 Git 或 Hugo Module 特性，你还需要
 
-- Git 2.37.3 或更高版本
-- Golang 1.23 或更高版本
+- Git
+- Golang
 
 ## 使用指引
 

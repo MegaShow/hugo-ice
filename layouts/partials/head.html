@@ -18,12 +18,12 @@
   {{/* 导入主题 CSS */}}
   {{ $vars := dict "highlight-style" (default "-" .Site.Params.highlight.style) }}
   {{ $opts := dict "transpiler" "dartsass" "vars" $vars }}
-  {{ $style := resources.Get "css/main.scss" | resources.ToCSS $opts | resources.Minify | resources.Fingerprint }}
+  {{ $style := resources.Get "css/main.scss" | toCSS $opts | minify  | fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
   {{/* 导入主题 JavaScript */}}
   {{ $opts := dict "params" (dict "statistics" .Site.Params.statistics) }}
-  {{ $js := resources.Get "js/main.ts" | js.Build $opts | resources.Minify | resources.Fingerprint }}
+  {{ $js := resources.Get "js/main.ts" | js.Build $opts | minify | fingerprint }}
   <script defer src="{{ $js.RelPermalink }}"></script>
 
   {{/* 站点分析工具 */}}

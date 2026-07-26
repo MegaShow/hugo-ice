@@ -1,7 +1,7 @@
 ---
 title: "快速上手"
 date: 2023-05-28T00:00:00+08:00
-lastmod: 2024-09-15T00:00:00+08:00
+lastmod: 2026-07-27T00:00:00+08:00
 ---
 
 ## 前置要求
@@ -12,13 +12,13 @@ lastmod: 2024-09-15T00:00:00+08:00
 
 我们推荐使用以下的版本，低于该版本可能主题也能正常工作，如果遇到问题请先尝试升级版本至满足以下条件。
 
-- Hugo Extended 0.131.0 或更高版本
-- Dart SaaS 1.77.8 或更高版本
+- [Hugo Extended](http://github.com/gohugoio/hugo/): 0.164.0 或更高版本
+- [Dart SaaS](https://github.com/sass/dart-sass): 1.102.0 或更高版本
 
 如果使用 Git 或 Hugo Module 特性，你还需要：
 
-- Git 2.37.3 或更高版本
-- Golang 1.23 或更高版本
+- Git
+- Golang
 
 ## 安装主题
 
