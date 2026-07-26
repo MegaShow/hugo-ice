@@ -1,25 +1,25 @@
 .footer {
-  color: gray;
+  border-top: 1px solid #f0f0f0;
+  color: #888;
   font-size: 0.875rem;
-  padding: 60px 0 80px;
+  padding: 40px 0 48px;
   text-align: center;
 
   a {
-    border-bottom: 1px solid #ccc;
-    color: gray;
+    color: #888;
     text-decoration: none;
-  }
+    transition: color 0.2s;
 
-  a:hover {
-    color: #0056b3;
-    border-bottom: 1px solid #0056b3;
+    &:hover {
+      color: #555;
+    }
   }
 
   div {
-    margin-top: 5px;
+    margin-top: 4px;
   }
 }
 
 .footer-separator {
-  margin: 0 5px;
+  margin: 0 6px;
 }

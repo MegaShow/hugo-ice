@@ -1,5 +1,3 @@
-import { iconMenuHTML, iconXMarkHTML } from '../resources/icon';
-
 /** 展示或隐藏顶部菜单 */
 function showOrHideHeaderMenu() {
   const menu = document.querySelector('.header-menu');
@@ -8,15 +6,11 @@ function showOrHideHeaderMenu() {
   if (!menu?.classList.contains('header-menu-open')) {
     // 切出
     menu?.classList.add('header-menu-open');
-    if (toggle) {
-      toggle.innerHTML = iconXMarkHTML();
-    }
+    toggle?.classList.add('header-menu-open');
   } else {
     // 隐藏
     menu.classList.remove('header-menu-open');
-    if (toggle) {
-      toggle.innerHTML = iconMenuHTML();
-    }
+    toggle?.classList.remove('header-menu-open');
   }
 }
 
