@@ -5,7 +5,7 @@
 .container {
   align-items: flex-start;
   display: flex;
-  margin: 40px auto;
+  margin: 24px auto 48px;
   max-width: v.$screen-md-max;
   padding: 0 20px;
 
@@ -27,5 +27,16 @@
 
 // 文章模块
 .article-wrapper {
-  margin: 50px 0 0;
+  margin-top: 40px;
+  padding-top: 36px;
+
+  &:first-child {
+    margin-top: 16px;
+    padding-top: 0;
+  }
+
+  // 文章之间的分隔线
+  & + & {
+    border-top: 1px solid #e0e0e0;
+  }
 }
