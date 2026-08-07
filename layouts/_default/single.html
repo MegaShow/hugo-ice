@@ -86,20 +86,28 @@
         {{ $mainPages := where .Site.RegularPages "Type" "in" .Site.MainSections }}
         {{ if or ($mainPages.Prev . ) ($mainPages.Next .) }}
           <div class="article-footer">
-            <div>
-              {{ with $mainPages.Prev . }}
+            {{ with $mainPages.Prev . }}
+              <div class="article-footer-prev">
                 <a class="article-footer-link" href="{{ .RelPermalink }}">
-                  {{ partial "icon" "left" }}{{ .Title }}
+                  {{ partial "icon" "left" }}
+                  <span>
+                    <span class="article-footer-label">上一篇</span>
+                    <span class="article-footer-title">{{ .Title }}</span>
+                  </span>
                 </a>
-              {{ end }}
-            </div>
-            <div>
-              {{ with $mainPages.Next . }}
+              </div>
+            {{ end }}
+            {{ with $mainPages.Next . }}
+              <div class="article-footer-next">
                 <a class="article-footer-link" href="{{ .RelPermalink }}">
-                  {{ .Title }}{{ partial "icon" "right" }}
+                  <span>
+                    <span class="article-footer-label">下一篇</span>
+                    <span class="article-footer-title">{{ .Title }}</span>
+                  </span>
+                  {{ partial "icon" "right" }}
                 </a>
-              {{ end }}
-            </div>
+              </div>
+            {{ end }}
           </div>
         {{ end }}
       {{ end }}
