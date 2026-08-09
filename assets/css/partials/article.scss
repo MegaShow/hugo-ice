@@ -444,6 +444,16 @@
     padding: 4px;
   }
 
+  p svg {
+    border: 1px solid #d0d0d0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: auto;
+    padding: 4px;
+    width: 100%;
+  }
+
   // 分割线
   hr {
     border: none;
@@ -559,7 +569,24 @@
     will-change: transform;
   }
 
+  div {
+    background-color: #fff;
+    color-scheme: light;
+    cursor: zoom-out;
+  }
+
+  div svg {
+    display: block;
+
+    foreignObject div {
+      background-color: transparent;
+    }
+  }
+
   .image-preview-animate {
-    transition: transform 0.3s ease;
+    transition:
+      height 0.3s ease,
+      transform 0.3s ease,
+      width 0.3s ease;
   }
 }
