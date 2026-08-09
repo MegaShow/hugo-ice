@@ -1,37 +1,40 @@
 // CodeTabs 组
 .ice-code-tabs {
-  background-color: #f8f8f8;
-  border: 1px solid #e2e2e2;
+  border: 1px solid #e0e0e0;
   margin: 16px 0;
 }
 
 // CodeTabs 标题
 .ice-code-tabs-header {
-  border-bottom: solid 1px #ccc;
+  border-bottom: 1px solid #e0e0e0;
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding-left: 0 !important;
 
   li {
+    color: #666;
     cursor: pointer;
+    font-size: 0.875rem;
     list-style: none;
-    padding: 3px 16px;
+    padding: 6px 16px;
+    transition: color 0.2s;
   }
 
   li:hover {
-    color: #007acc;
+    color: #4a8fd4;
   }
 
   li[data-active='true'] {
-    border-bottom: 3px solid #007acc;
-    font-weight: bold;
+    border-bottom: 2px solid #4a8fd4;
+    color: #555;
+    font-weight: 600;
   }
 
   p {
-    color: gray;
-    list-style: none;
-    padding: 5px 16px;
+    color: #888;
+    margin: 0;
+    padding: 6px 16px;
   }
 }
 
