@@ -1,12 +1,12 @@
 {{ define "main" }}
   <main class="container">
     {{ if eq .Kind "taxonomy" }}
-      <section class="taxonomy">
+      <section class="main-section taxonomy">
         <h1 class="taxonomy-title">{{ .Title }}</h1>
-        <p>目前共计有 {{ len .Data.Terms }} 项内容。</p>
+        <p>共收录 {{ len .Data.Terms }} 项内容。</p>
         <div class="taxonomy-terms">
           {{ range .Data.Terms.ByCount }}
-            <div class="taxonomy-term">
+            <div>
               <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
               <span>({{ .Count }})</span>
             </div>
@@ -14,10 +14,11 @@
         </div>
       </section>
     {{ else }}
-      <section class="term">
-        <h1 class="term-title r-background-color-before" data-rand="0">{{ .Title }}</h1>
+      <section class="main-section taxonomy">
+        <h1 class="term-title">{{ .Title }}</h1>
+        <p>共创作 {{ len .Pages }} 篇文章。</p>
         {{ range $idx, $group := .Pages.GroupByDate "2006" }}
-          <h2 class="term-subtitle r-background-color-before" data-rand="{{ add (mod $idx 4) 1 }}">
+          <h2 class="term-subtitle">
             {{ $group.Key }}
           </h2>
           <ul class="term-article-list">

@@ -36,11 +36,16 @@ export function initCatalog() {
 
   // 注册点击事件和滚动事件
   let lastTitle: CatalogItem | undefined = undefined;
-  let onClick = false;
+  let isClick = false;
+  let isClickTimer = 0;
   let timer = 0;
   titleInfos.forEach(titleInfo => {
     titleInfo.element.addEventListener('click', () => {
-      onClick = true;
+      isClick = true;
+      clearTimeout(isClickTimer);
+      isClickTimer = setTimeout(() => {
+        isClick = false;
+      }, 1000);
       if (titleInfo !== lastTitle) {
         lastTitle?.element.classList.remove('active');
         titleInfo.element.classList.add('active');
@@ -49,11 +54,7 @@ export function initCatalog() {
     });
   });
   window.addEventListener('scroll', () => {
-    if (timer) {
-      return;
-    }
-    if (onClick) {
-      onClick = false;
+    if (timer || isClick) {
       return;
     }
     timer = setTimeout(() => {

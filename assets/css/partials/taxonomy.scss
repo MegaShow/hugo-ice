@@ -1,13 +1,18 @@
+.archives,
 .taxonomy {
-  margin: 0 60px;
+  a {
+    line-height: 1.7;
+  }
 
   p {
-    font-size: 1rem;
+    color: #555;
+    font-size: 0.875rem;
   }
 }
 
 .taxonomy-title {
-  font-size: 2rem;
+  color: #333;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -18,92 +23,83 @@
   gap: 8px 16px;
 }
 
-.taxonomy-term {
+.taxonomy-terms {
   a {
     border-bottom: 1px solid #9c9c9c;
-    color: #222;
+    color: #333;
     text-decoration: none;
-  }
 
-  a:hover {
-    border-bottom: 1px solid #0056b3;
-    color: #0056b3;
+    &:hover {
+      border-bottom: 1px solid #4a8fd4;
+      color: #4a8fd4;
+    }
   }
-}
-
-.term {
-  border-left: 4px solid #e5e5e5;
-  margin-left: 40px;
 }
 
 .term-title {
   align-items: center;
+  color: #333;
   display: flex;
-  font-size: 24px;
-  margin-top: 40px;
-  padding-left: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  gap: 12px;
+  margin: 20px 0 0;
 
-  &::before {
-    background-color: #b5b5b5;
-    border-radius: 50%;
-    content: ' ';
-    height: 12px;
-    margin: 0 0 0 -28px;
-    position: absolute;
-    width: 12px;
+  & + .term-article-list + & {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+    padding-top: 20px;
   }
+}
+
+.term-title-count {
+  color: #999;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-top: 3px;
 }
 
 .term-subtitle {
   align-items: center;
-  color: #5b5b5b;
+  color: #333;
   display: flex;
-  font-size: 20px;
-  margin: 28px 0 16px;
-  padding-left: 20px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 20px 0 0;
 
-  &::before {
-    background-color: #b5b5b5;
-    border-radius: 50%;
-    content: ' ';
-    height: 10px;
-    margin: 0 0 0 -27px;
-    position: absolute;
-    width: 10px;
+  & + .term-article-list + & {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+    padding-top: 20px;
   }
 }
 
 .term-article-list {
-  padding-left: 20px;
+  margin: 12px 0;
+  padding: 0;
 
   li {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
-    line-height: 2.8rem;
     list-style: none;
-  }
-
-  li::before {
-    background-color: #b5b5b5;
-    border-radius: 50%;
-    content: ' ';
-    height: 10px;
-    margin: 0 0 0 -27px;
-    position: absolute;
-    width: 10px;
+    margin-bottom: 0.875rem;
   }
 }
 
 .term-link {
-  color: #222;
+  color: #333;
   text-decoration: none;
+  transition: color 0.2s;
 
   &:hover {
-    color: #0056b3;
+    color: #4a8fd4;
   }
 }
 
 .term-article-time {
-  font-size: 14px;
-  margin-right: 4px;
+  color: #999;
+  font-size: 0.875rem;
+  line-height: 1.9;
+  margin-right: 12px;
+  min-width: 3rem;
 }
