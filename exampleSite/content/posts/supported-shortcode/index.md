@@ -1,6 +1,6 @@
 ---
-title: '支持的短代码'
-date: '2023-02-23T00:00:00+08:00'
+title: 支持的短代码
+date: 2026-08-01T00:00:00+08:00
 tags: [Hugo, Markdown, 测试]
 outdatedTips: true
 ---
