@@ -199,6 +199,8 @@ fn main() {
 
 ![picture](picture.png)
 
+![picture-drawio](picture.drawio.svg)
+
 ## 分割线
 
 你好，世界！
