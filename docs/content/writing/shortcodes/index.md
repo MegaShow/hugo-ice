@@ -1,7 +1,7 @@
 ---
 title: "短代码"
 date: 2023-05-28T00:00:00+08:00
-lastmod: 2024-09-07T00:00:00+08:00
+lastmod: 2026-08-09T00:00:00+08:00
 ---
 
 ## CodeTab 代码标签页
@@ -70,6 +70,26 @@ Import 短代码允许导入该页面的资源文件，当前仅支持导入 HTM
 <!-- main.html -->
 <u>Content of HTML File</u>
 ```
+
+需要注意：使用 Import 短代码需要在站点配置中设置 `[security]` 的 `allowContent`，允许导入 HTML 文件类型，否则 Hugo 构建站点时会报错。
+
+{{< CodeTabs >}}
+{{< CodeTab "toml" >}}
+[security]
+  allowContent = ['markdown', 'html']
+{{< /CodeTab >}}
+{{< CodeTab "yaml" >}}
+security:
+  allowContent: ['markdown', 'html']
+{{< /CodeTab >}}
+{{< CodeTab "json" >}}
+{
+  "security": {
+    "allowContent": ["markdown", "html"]
+  }
+}
+{{< /CodeTab >}}
+{{< /CodeTabs >}}
 
 ## Tab 标签页
 

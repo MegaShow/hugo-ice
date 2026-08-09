@@ -22,6 +22,9 @@ hasCJKLanguage = true
     endLevel = 6
     ordered = false
 
+[security]
+  allowContent = ['markdown', 'html']
+
 [menu]
   [[menu.header]]
     name = '首页'
@@ -43,7 +46,6 @@ hasCJKLanguage = true
   [params.article]
     hidePublishDate = true
   [params.footer]
-    since = 2016
-    beian = '粤ICP备17101777号-1'
+    since = 2022
   [params.highlight]
     style = 'vs'

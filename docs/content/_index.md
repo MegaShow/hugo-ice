@@ -9,7 +9,7 @@ hideTableOfContents: true
 
 <h1 style="text-align:center">Hugo Ice</h1>
 
-![hugo-ice](favicon.svg)
+<img src="favicon.svg" style="border:none"></img>
 
 你好，欢迎使用 Hugo Ice。
 
