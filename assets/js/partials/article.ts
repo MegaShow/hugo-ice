@@ -187,8 +187,8 @@ export function initImage() {
     const div = document.createElement('div');
     div.classList.add('image-preview-animate');
     div.style.position = 'fixed';
-    div.style.width = `${rect.width - 10}px`; // 去掉 padding 和 border
-    div.style.height = `${rect.height - 10}px`;
+    div.style.width = `${Math.round(rect.width - 10)}px`; // 去掉 padding 和 border
+    div.style.height = `${Math.round(rect.height - 10)}px`;
     div.style.transform = `translate(${rect.left + 5}px, ${rect.top + 5}px)`;
     div.appendChild(svgNode);
     imagePreview.appendChild(div);
@@ -198,15 +198,15 @@ export function initImage() {
     return {
       rawLeft: () => svg.getBoundingClientRect().left,
       rawTop: () => svg.getBoundingClientRect().top,
-      rawWidth: () => svg.getBoundingClientRect().width - 10,
-      rawHeight: () => svg.getBoundingClientRect().height - 10,
+      rawWidth: () => Math.round(svg.getBoundingClientRect().width) - 10,
+      rawHeight: () => Math.round(svg.getBoundingClientRect().height) - 10,
       rawNaturalWidth: () => initialWidth,
       rawNaturalHeight: () => initialHeight,
 
       element: () => div,
       baseWidth: () => initialWidth,
       baseHeight: () => initialHeight,
-      maxScale: () => 3,
+      maxScale: () => 5,
     };
   };
   const createPreview = (addImage: (imagePreview: HTMLDivElement) => PreviewImage) => {
@@ -227,10 +227,30 @@ export function initImage() {
 
     // 更新元素尺寸和位置
     const updateElement = () => {
-      const currentWidth = img.baseWidth() * currentScale;
-      const currentHeight = img.baseHeight() * currentScale;
-      const targetX = (document.documentElement.clientWidth - currentWidth) / 2 + offsetX;
-      const targetY = (document.documentElement.clientHeight - currentHeight) / 2 + offsetY;
+      let currentWidth = img.baseWidth() * currentScale;
+      let currentHeight = img.baseHeight() * currentScale;
+      // 矫正 width 和 height, 确保比例更合适
+      const wf = (img.rawNaturalHeight() / Math.floor(currentHeight)) * img.rawNaturalWidth();
+      const wr = (img.rawNaturalHeight() / Math.round(currentHeight)) * img.rawNaturalWidth();
+      if (wf === Math.floor(wf)) {
+        currentWidth = wf;
+      } else if (wr === Math.floor(wr)) {
+        currentWidth = wr;
+      } else {
+        currentWidth = Math.round(currentWidth);
+      }
+      const hf = (img.rawNaturalWidth() / Math.floor(currentWidth)) * img.rawNaturalHeight();
+      const hr = (img.rawNaturalWidth() / Math.round(currentWidth)) * img.rawNaturalHeight();
+      if (hf === Math.floor(hf)) {
+        currentHeight = hf;
+      } else if (hr === Math.floor(hr)) {
+        currentHeight = hr;
+      } else {
+        currentHeight = Math.round(currentHeight);
+      }
+
+      const targetX = Math.round((document.documentElement.clientWidth - currentWidth) / 2 + offsetX);
+      const targetY = Math.round((document.documentElement.clientHeight - currentHeight) / 2 + offsetY);
       img.element().style.width = `${currentWidth}px`;
       img.element().style.height = `${currentHeight}px`;
       img.element().style.transform = `translate(${targetX}px, ${targetY}px)`;
@@ -238,8 +258,8 @@ export function initImage() {
       if (img.element().tagName === 'DIV') {
         const svg = img.element().querySelector('svg');
         if (svg) {
-          svg.setAttribute('width', String(Math.round(currentWidth)));
-          svg.setAttribute('height', String(Math.round(currentHeight)));
+          svg.setAttribute('width', String(currentWidth));
+          svg.setAttribute('height', String(currentHeight));
           svg.style.width = `${currentWidth}px`;
           svg.style.height = `${currentHeight}px`;
         }
