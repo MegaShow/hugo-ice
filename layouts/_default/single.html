@@ -48,7 +48,16 @@
             {{ end }}
           </div>
           {{ if .Params.cover }}
-            <img class="article-cover" src="{{ .Params.cover }}" alt="Article Cover" />
+            <img
+              alt="Article Cover"
+              class="article-cover"
+              src="{{ .Params.cover }}"
+              {{ if .Params.coverAspectRatio }}
+                style="aspect-ratio: {{ .Params.coverAspectRatio | safeCSS }}"
+              {{ else }}
+                style="aspect-ratio: 3 / 1"
+              {{ end }}
+            />
           {{ end }}
         </div>
       {{ end }}

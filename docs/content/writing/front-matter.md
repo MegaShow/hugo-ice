@@ -35,7 +35,8 @@ Hugo Ice 通过 Front Matter 提供了更丰富的文章配置能力扩展。
 
 | 字段 | 类型 | 默认值 | 描述 | 示例 |
 |--|--|--|--|--|
-| cover | string | - | 文章封面图, 建议配置相对路径, 在捆绑包下寻找, 推荐图片比例 3:1 | post-cover.svg |
+| cover | string | - | 文章封面图, 建议配置相对路径, 在捆绑包下寻找 | post-cover.svg |
+| coverAspectRatio | string | 3 / 1 | 封面图宽高比, 配合裁剪展示 | 16 / 9 |
 | hideHeader | bool | false | 隐藏文章头部, 包括标题、封面图、时间、标签等信息 | true |
 | hideTableOfContents | bool | false | 隐藏目录 | true |
 | outdatedTips | bool | - | 过时提示 | true |
