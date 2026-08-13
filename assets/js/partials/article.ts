@@ -14,6 +14,7 @@ const counterService = new CounterService(
 interface CatalogItem {
   hash: string;
   offsetTop: number;
+  header: HTMLElement;
   element: HTMLElement;
 }
 
@@ -31,7 +32,7 @@ export function initCatalog() {
     if (!catalogElement) {
       return;
     }
-    titleInfos.push({ hash: header.id, offsetTop: header.offsetTop, element: catalogElement });
+    titleInfos.push({ hash: header.id, offsetTop: header.offsetTop, header: header, element: catalogElement });
   });
 
   // 注册点击事件和滚动事件
@@ -40,7 +41,14 @@ export function initCatalog() {
   let isClickTimer = 0;
   let timer = 0;
   titleInfos.forEach(titleInfo => {
-    titleInfo.element.addEventListener('click', () => {
+    // 目录点击事件
+    titleInfo.element.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById(titleInfo.hash);
+      if (target) {
+        window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+        history.replaceState(null, '', `#${titleInfo.hash}`);
+      }
       isClick = true;
       clearTimeout(isClickTimer);
       isClickTimer = setTimeout(() => {
@@ -50,6 +58,19 @@ export function initCatalog() {
         lastTitle?.element.classList.remove('active');
         titleInfo.element.classList.add('active');
         lastTitle = titleInfo;
+      }
+    });
+    // 锚点点击事件
+    const anchor = titleInfo.header.querySelector<HTMLAnchorElement>('.header-anchor');
+    anchor?.addEventListener('click', e => {
+      e.preventDefault();
+      const hash = anchor.getAttribute('href')?.slice(1);
+      if (hash) {
+        const target = document.getElementById(hash);
+        if (target) {
+          window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+          history.replaceState(null, '', `#${hash}`);
+        }
       }
     });
   });
@@ -177,33 +198,30 @@ export function initImage() {
       maxScale: () => maxScale,
     };
   };
-  const addPreviewSvg = (imagePreview: HTMLDivElement, span: HTMLSpanElement): PreviewImage => {
-    const svg = span.querySelector('svg');
-    if (!svg) {
-      throw new Error('SVG not found');
-    }
-    const rect = svg.getBoundingClientRect();
-    const svgNode = svg.cloneNode(true) as SVGElement;
-    const div = document.createElement('div');
-    div.classList.add('image-preview-animate');
-    div.style.position = 'fixed';
-    div.style.width = `${Math.round(rect.width - 10)}px`; // 去掉 padding 和 border
-    div.style.height = `${Math.round(rect.height - 10)}px`;
-    div.style.transform = `translate(${rect.left + 5}px, ${rect.top + 5}px)`;
-    div.appendChild(svgNode);
-    imagePreview.appendChild(div);
+  const addPreviewSvg = (imagePreview: HTMLDivElement, img: HTMLImageElement): PreviewImage => {
+    // 创建图片, 默认位置不变
+    const rect = img.getBoundingClientRect();
+    const image = document.createElement('img');
+    image.classList.add('image-preview-animate', 'image-preview-svg');
+    image.src = img.currentSrc || img.src;
+    image.alt = img.alt || img.title || '';
+    image.style.position = 'fixed';
+    image.style.width = `${img.width}px`;
+    image.style.height = `${img.height}px`;
+    image.style.transform = `translate(${rect.left + 5}px, ${rect.top + 5}px)`; // 存在 padding 和 border
+    imagePreview.appendChild(image);
 
-    const initialWidth = rect.width - 10;
-    const initialHeight = rect.height - 10;
+    const initialWidth = img.width;
+    const initialHeight = img.height;
     return {
-      rawLeft: () => svg.getBoundingClientRect().left,
-      rawTop: () => svg.getBoundingClientRect().top,
-      rawWidth: () => Math.round(svg.getBoundingClientRect().width) - 10,
-      rawHeight: () => Math.round(svg.getBoundingClientRect().height) - 10,
+      rawLeft: () => img.getBoundingClientRect().left,
+      rawTop: () => img.getBoundingClientRect().top,
+      rawWidth: () => Math.round(img.getBoundingClientRect().width) - 10,
+      rawHeight: () => Math.round(img.getBoundingClientRect().height) - 10,
       rawNaturalWidth: () => initialWidth,
       rawNaturalHeight: () => initialHeight,
 
-      element: () => div,
+      element: () => image,
       baseWidth: () => initialWidth,
       baseHeight: () => initialHeight,
       maxScale: () => 5,
@@ -415,14 +433,14 @@ export function initImage() {
     window.addEventListener('keydown', handleKeyDown);
   };
 
-  document.querySelectorAll<HTMLImageElement>('.article p img').forEach(img => {
+  document.querySelectorAll<HTMLImageElement>('.article p img:not(.article-svg)').forEach(img => {
     img.addEventListener('click', () => {
       createPreview((imagePreview: HTMLDivElement) => addPreviewImg(imagePreview, img));
     });
   });
-  document.querySelectorAll<HTMLSpanElement>('.article p .article-inline-image').forEach(span => {
-    span.addEventListener('click', () => {
-      createPreview((imagePreview: HTMLDivElement) => addPreviewSvg(imagePreview, span));
+  document.querySelectorAll<HTMLImageElement>('.article p img.article-svg').forEach(img => {
+    img.addEventListener('click', () => {
+      createPreview((imagePreview: HTMLDivElement) => addPreviewSvg(imagePreview, img));
     });
   });
 }
