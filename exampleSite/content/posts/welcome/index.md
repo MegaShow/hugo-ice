@@ -1,6 +1,7 @@
 ---
 title: 欢迎使用冰块主题
 date: 2022-09-28T00:00:00+08:00
+weight: 1
 cover: hugo-logo.svg
 coverAspectRatio: 1493 / 391
 ---

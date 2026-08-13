@@ -1,18 +1,11 @@
 {{- $ext := lower (path.Ext .Destination) -}}
-{{- if eq $ext ".svg" -}}
-  {{- $resource := "" -}}
-  {{- if hasPrefix .Destination "/" -}}
-    {{- $resource = resources.Get (strings.TrimPrefix "/" .Destination) -}}
-  {{- else -}}
-    {{- $resource = .Page.Resources.GetMatch .Destination -}}
-  {{- end -}}
-  {{- if $resource -}}
-    <span class="article-inline-image" data-raw-src="{{ .Destination | safeURL }}">
-      {{ $resource.Content | safeHTML }}
-    </span>
-  {{- else -}}
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} />
-  {{- end -}}
+{{- if and (eq $ext ".svg") (not (hasPrefix .Destination "/")) -}}
+  <img
+    class="article-svg"
+    src="{{ .Destination | safeURL }}"
+    alt="{{ .Text }}"
+    {{ with .Title }}title="{{ . }}"{{ end }}
+  />
 {{- else -}}
   <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} />
 {{- end -}}

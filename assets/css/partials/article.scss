@@ -431,8 +431,8 @@
     }
   }
 
-  // 图像
-  p img {
+  // 普通图片
+  p img:not(.article-svg) {
     border: 1px solid #d0d0d0;
     box-sizing: border-box;
     cursor: pointer;
@@ -443,7 +443,8 @@
     padding: 4px;
   }
 
-  p svg {
+  // SVG 图片
+  p img.article-svg {
     border: 1px solid #d0d0d0;
     box-sizing: border-box;
     cursor: pointer;
@@ -568,18 +569,8 @@
     will-change: transform;
   }
 
-  div {
+  .image-preview-svg {
     background-color: #fff;
-    color-scheme: light;
-    cursor: zoom-out;
-  }
-
-  div svg {
-    display: block;
-
-    foreignObject div {
-      background-color: transparent;
-    }
   }
 
   .image-preview-animate {

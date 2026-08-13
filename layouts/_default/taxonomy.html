@@ -16,7 +16,7 @@
     {{ else }}
       <section class="main-section taxonomy">
         <h1 class="term-title">{{ .Title }}</h1>
-        <p>共创作 {{ len .Pages }} 篇文章。</p>
+        <p>共收录 {{ len .Pages }} 篇文章。</p>
         {{ range $idx, $group := .Pages.GroupByDate "2006" }}
           <h2 class="term-subtitle">
             {{ $group.Key }}
