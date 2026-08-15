@@ -141,6 +141,32 @@ menu:
 {{< /CodeTab >}}
 {{< /CodeTabs >}}
 
+## 分页
+
+Hugo 支持对文章列表进行分页展示，通过 pagination 配置指定每页展示的文章数量。当主 Section 的文章数量超过该值时，将自动启用分页导航。
+
+{{< CodeTabs >}}
+{{< CodeTab "toml" >}}
+[pagination]
+  pagerSize = 5
+{{< /CodeTab >}}
+{{< CodeTab "yaml" >}}
+pagination:
+  pagerSize: 5
+{{< /CodeTab >}}
+{{< CodeTab "json" >}}
+{
+  "pagination": {
+    "pagerSize": 5
+  }
+}
+{{< /CodeTab >}}
+{{< /CodeTabs >}}
+
+| 字段 | 类型 | 默认值 | 描述 |
+|--|--|--|--|
+| pagerSize | number | 10 | 每页展示的文章数量 |
+
 ## 页尾
 
 ### 版权声明

@@ -44,6 +44,10 @@ copyright = "本站点所有文章除特别声明外，均采用 CC BY-NC-SA 4.0
     url = '/about'
     weight = 100
 
+# 分页配置
+[pagination]
+  pagerSize = 3
+
 # 主题参数
 [params]
   mainSections = ['posts'] # 主 Sections 列表

@@ -1,7 +1,9 @@
 {{ define "main" }}
   <main class="container container-list">
     <section class="main-section">
-      {{ range where .Site.RegularPages "Type" "in" .Site.MainSections }}
+      {{ $pages := where .Site.RegularPages "Type" "in" .Site.MainSections }}
+      {{ $paginator := .Paginate $pages }}
+      {{ range $paginator.Pages }}
         <article class="article-wrapper">
           <div class="article-header">
             <h2 class="article-title">
@@ -47,6 +49,7 @@
           </div>
         </article>
       {{ end }}
+      {{ partial "pagination" $paginator }}
     </section>
   </main>
 {{ end }}

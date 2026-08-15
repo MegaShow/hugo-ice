@@ -1,0 +1,66 @@
+{{ if or .HasPrev .HasNext }}
+  <nav class="pagination">
+    {{/* 上一页箭头 */}}
+    {{ if .HasPrev }}
+      <a class="pagination-arrow" href="{{ .Prev.URL }}">
+        {{ partial "icon" "left" }}
+      </a>
+    {{ else }}
+      <span class="pagination-arrow pagination-arrow-disabled">
+        {{ partial "icon" "left" }}
+      </span>
+    {{ end }}
+
+    {{/* 页码：首页、尾页、当前页前后各1页，最多展示5个页码 */}}
+    {{/* 计算当前页前后各1页的范围 */}}
+    {{ $currentPage := .PageNumber }}
+    {{ $startPage := sub .PageNumber 1 }}
+    {{ if lt $startPage 1 }}
+      {{ $startPage = 1 }}
+    {{ end }}
+    {{ $endPage := add .PageNumber 1 }}
+    {{ if gt $endPage .TotalPages }}
+      {{ $endPage = .TotalPages }}
+    {{ end }}
+
+    {{/* 第一页（不在范围内时单独显示） */}}
+    {{ if gt $startPage 1 }}
+      {{ $first := index .Pagers 0 }}
+      <a class="pagination-item" href="{{ $first.URL }}">{{ $first.PageNumber }}</a>
+      {{ if gt $startPage 2 }}
+        <span class="pagination-ellipsis">...</span>
+      {{ end }}
+    {{ end }}
+
+    {{/* 中间页码（当前页前后各2页） */}}
+    {{ range .Pagers }}
+      {{ if and (ge .PageNumber $startPage) (le .PageNumber $endPage) }}
+        {{ if eq .PageNumber $currentPage }}
+          <span class="pagination-item pagination-item-active">{{ .PageNumber }}</span>
+        {{ else }}
+          <a class="pagination-item" href="{{ .URL }}">{{ .PageNumber }}</a>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{/* 最后一页（不在范围内时单独显示） */}}
+    {{ if lt $endPage .TotalPages }}
+      {{ if lt (add $endPage 1) .TotalPages }}
+        <span class="pagination-ellipsis">...</span>
+      {{ end }}
+      {{ $last := index .Pagers (sub .TotalPages 1) }}
+      <a class="pagination-item" href="{{ $last.URL }}">{{ $last.PageNumber }}</a>
+    {{ end }}
+
+    {{/* 下一页箭头 */}}
+    {{ if .HasNext }}
+      <a class="pagination-arrow" href="{{ .Next.URL }}">
+        {{ partial "icon" "right" }}
+      </a>
+    {{ else }}
+      <span class="pagination-arrow pagination-arrow-disabled">
+        {{ partial "icon" "right" }}
+      </span>
+    {{ end }}
+  </nav>
+{{ end }}
